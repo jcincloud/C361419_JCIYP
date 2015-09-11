@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.BodyClass = "News";
+    ViewBag.Category = "最新消息";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2><span>NEWS<em>@ViewBag.Category</em></span></h2>
+
+<div class="share">
+    <!-- fb分享 -->
+    <div id="fb-root"></div>
+    <script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=374333872702952";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- fb分享 data-href需輸入網址參數 -->
+    <!-- g+分享 url=需輸入網址參數 -->
+    
+    <!-- line分享(手機才看得到) -->
+    <span class="line-share">
+        <script src="//media.line.me/js/line-button.js?v=20140411"></script>
+        <script>
+            new media_line_me.LineButton({ "pc": false, "lang": "zh-hant", "type": "e" });
+        </script>
+    </span>
+</div>
+
+<div id="PageContent"><!--ScriptsJSX news_contentW.jsx--></div>
+<div class="align-c">
+    <a href="~/News/News_list" class="btn">回列表</a>
+</div>
+@section Scripts {
+    <script>
+        var gb_id = '@Request.QueryString["id"]';
+    </script>
+    @Scripts.Render("~/news_contentWWW")
+}

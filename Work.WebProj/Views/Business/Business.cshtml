@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.BodyClass = "Business p1";
+    ViewBag.Category = "會員商機";
+    ViewBag.Title = "最新商機";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li><a href="~/Business/Business">@ViewBag.Category</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+<h2><span>BUSINESS<em>@ViewBag.Category</em></span></h2>
+<h3>@ViewBag.Title</h3>
+<div id="PageContent"></div>
+@section Scripts {
+    @Scripts.Render("~/business_listWWW")
+}

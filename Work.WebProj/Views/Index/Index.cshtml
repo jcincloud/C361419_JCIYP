@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "國際青年商會簡介:商機：商業機會:中壢亞太大會:世界大會:中壢國際青年商會:中壢青商會:青商會:台灣:桃園:中壢：母會子會兄弟會姊妹會：桃園青商大園青商台東青商成功青商：平鎮八德龍潭楊梅埔心一德虎頭山蘆竹觀音大溪";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@section css {
+    <link href="~/Content/css/fresco/fresco.css" rel="stylesheet">
+}
+@section Scripts {
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @Scripts.Render("~/homeWWW")
+    <script src="~/Scripts/fresco.js"></script>
+}
+
+<div id="content">
+    <ul class="tabs">
+        <li><a href="#sec1">最新消息</a></li>
+        <li><a href="#sec2">活動花絮</a></li>
+        <li><a href="#sec3">心得分享</a></li>
+        @* <li><a href="#sec4">會議紀錄</a></li> *@
+        @* <li><a href="#sec5">影音分享</a></li> *@
+    </ul>
+    <div class="tabs-content" id="tabContent"></div><!-- tabs-content //-->
+
+    <div class="calendar">
+        <h3 class="title3" id="calendar">CALENDAR</h3>
+        <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=chunglijci%40gmail.com&amp;color=%232952A3&amp;ctz=Asia%2FTaipei" style=" border-width:0;width:100%" height="360" frameborder="0" scrolling="no"></iframe>
+    </div><!-- calender //-->
+
+    <div class="align-l">
+        <h4>加入青商就是投資你的未來</h4>
+        <p>想認識 <strong>新的朋友</strong> ？想 <strong>充實自我</strong> 學習成長？中壢青商歡迎有志青年加入，改變你的人生！</p>
+        <p>快按下立即加入的按鈕，成為我們的一員！</p>
+        <p><a href="~/JoinUs" class="btn">立即加入</a></p>
+    </div>
+
+</div><!-- content //-->
+
+<aside>
+    <div class="grid">
+        <div id="VideoIframe"></div>
+        @*<iframe class="video" src="https://www.youtube.com/embed/fOnldn2zAEY" frameborder="0" allowfullscreen></iframe>*@
+        <h3 class="title2">CONTACT US</h3>
+        <ul class="contacts">
+            <li><em>Address:</em><br>320桃園縣中壢市明德路280之3號4樓 <a href="https://goo.gl/maps/bqpOA" target="new">(MAP)</a></li>
+            <li><em>E-mail:</em><br><a href="mailto:cljc@ms48.hinet.net">cljc@ms48.hinet.net</a></li>
+            <li><em>Tel:</em>(03)492-0342　<em>Fax:</em>(03)491-5406</li>
+        </ul>
+    </div>
+    <div class="grid">
+        <h3>FACEBOOK</h3>
+        <div class="fb-like-box" data-href="https://www.facebook.com/chunglijci" data-width="300" data-height="480" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="false"></div>
+    </div>
+</aside>

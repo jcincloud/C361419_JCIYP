@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.BodyClass = "Doc p1"; <!--p1:心得分享, p2:會議記錄, p3:文件範本-->
+    ViewBag.Category = "文件區";
+    //ViewBag.Title = "心得分享"; <!--心得分享, 會議記錄, 文件範本-->
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li><a href="~/Doc/Doc_list">@ViewBag.Category</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>DOCUMENT<em>心得分享</em></span></h2>
+
+<div class="share">
+    <!-- fb分享 設定分享時彈出視窗 -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- line分享(手機才看得到) -->
+    <span class="line-share">
+        <script src="//media.line.me/js/line-button.js?v=20140411"></script>
+        <script>
+            new media_line_me.LineButton({ "pc": false, "lang": "zh-hant", "type": "e" });
+        </script>
+    </span>
+</div>
+
+<div id="PageContent"></div>
+<div class="align-c">
+    <a href="~/Doc/Doc_list" class="btn">回列表</a>
+</div>
+@section Scripts {
+    <script>
+        var gb_id = '@Request.QueryString["id"]';
+    </script>
+
+    @Scripts.Render("~/document_contentWWW")
+}

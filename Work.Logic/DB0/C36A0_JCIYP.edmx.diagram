@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46bc7c2681d4450794c4bd8a177c9c44" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.SYS_人員" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.SYS_流水號資料表" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.SYS_單位" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.行業分類" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.產品分類" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.會員分類" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.會員產品" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.AspNetRoles" Width="1.5" PointX="13.75" PointY="2.5" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.AspNetUserClaims" Width="1.5" PointX="18.25" PointY="3.625" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.AspNetUserLogins" Width="1.5" PointX="18.25" PointY="1" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.AspNetUsers" Width="1.5" PointX="16" PointY="1.25" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.Department" Width="1.5" PointX="3.75" PointY="13.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_Adr_zh_TW_Data" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_Currency" Width="1.5" PointX="13.75" PointY="10.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_IDX" Width="1.5" PointX="13.75" PointY="13.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_Lang" Width="1.5" PointX="9.75" PointY="14.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_Parm" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_SN" Width="1.5" PointX="5.75" PointY="15.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_UserLoginLog" Width="1.5" PointX="15.75" PointY="6.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_WebCount" Width="1.5" PointX="15.75" PointY="9.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.i_WebVisitData" Width="1.5" PointX="15.75" PointY="11.75" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="C36A0_JCIYPModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.最新消息" Width="1.5" PointX="10.625" PointY="18" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.最新消息分類" Width="1.5" PointX="8.375" PointY="18.625" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_最新消息_最新消息分類" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.活動花絮分類" Width="1.5" PointX="18.375" PointY="7.625" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.活動花絮主檔" Width="1.5" PointX="20.625" PointY="7" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_活動花絮主檔_活動花絮分類" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.文件管理" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.會員_其他單位" Width="1.5" PointX="20.625" PointY="12.125" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.會員_其他單位分類" Width="1.5" PointX="18.375" PointY="13.75" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_會員_其他單位_會員_其他單位分類" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.會員" Width="1.5" PointX="6.5" PointY="22" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_會員產品_會員" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.活動花絮內容" Width="1.5" PointX="22.875" PointY="7" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_活動花絮內容_活動花絮主檔" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.BannerRotatorCategory" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="C36A0_JCIYPModel.BannerRotator" Width="1.5" PointX="3" PointY="10" />
+        <AssociationConnector Association="C36A0_JCIYPModel.FK_BannerRotator_BannerRotatorCategory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

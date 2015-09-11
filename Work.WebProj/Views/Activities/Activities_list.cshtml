@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.BodyClass = "Activities";
+    ViewBag.Title = "活動花絮";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2><span>Activities<em>@ViewBag.Title</em></span></h2>
+<div id="PageContent"><!--ScriptsJSX actities_listW.jsx--></div>
+@section Scripts {
+    <script src="~/Scripts/jquery.lazyloadxt.min.js"></script>
+    @Scripts.Render("~/actities_listWWW")
+}

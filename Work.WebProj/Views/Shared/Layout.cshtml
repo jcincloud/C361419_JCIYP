@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<!-- saved from url=(0014)about:internet -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="@Resources.ResWeb.keywords" />
+    <meta name="description" content="@Resources.ResWeb.description" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@ViewBag.Url" />
+    <meta property="og:description" content="@Resources.ResWeb.description" />
+
+    <title>@Resources.ResWeb.WebTitle:@ViewBag.Category:@ViewBag.Title</title>
+    @if (ViewBag.IsFirstPage)
+    {
+        <link href="~/Content/css/index.css" rel="stylesheet" type="text/css"> }
+    else
+    {
+        <link href="~/Content/css/page.css" rel="stylesheet" type="text/css"> }
+    @RenderSection("css", false)
+    <script src="~/Scripts/BrowerInfo.js"></script>
+    <script>
+        var gb_approot = '@Url.Content("~")';
+    </script>
+</head>
+
+<body class="@ViewBag.BodyClass">
+
+    <menu>
+        <button id="menu-toggle" class="md-trigger icon-menu" data-modal="menu">MENU</button>
+        <button class="md-trigger icon-switch" data-modal="login">會友登入</button>
+        <a href="~/JoinUs" class="icon-plus">加入我們</a>
+        @* <button class="md-trigger icon-plus" data-modal="joinus">加入我們</button> *@
+    </menu>
+    <div class="md-modal" id="login">
+        <div class="md-content">
+            <h3>會友登入</h3>
+            <form id="loginMember">
+                <p><label>帳號</label><input id="act" type="text" required /></p>
+                <p><label>密碼</label><input id="pwd" type="password" required /></p>
+                <ul class="text-list">
+                    <li>帳號為您的會員編號，密碼預設為出生年月日(例如610203)</li>
+                    <li>登入後請修改您的密碼，謝謝!</li>
+                </ul>
+                <button type="submit" class="btn">登入</button>
+            </form>
+            <button class="md-close icon-close">關閉視窗</button>
+        </div>
+    </div>
+    @*<div class="md-modal" id="joinus">
+            <div class="md-content">
+                <h3>加入我們</h3>
+                <form id="joinInfo">
+                    <p><label>姓名</label><input type="text" id="m_name"></p>
+                    <p><label>聯絡電話</label><input type="tel" id="m_tel"></p>
+                    <p><label>聯絡住址</label><input type="text" id="m_addr"></p>
+                    <p><label>電子信箱</label><input type="email" id="m_email"></p>
+                    <p><label>興趣</label><input type="text" id="m_interest"></p>
+                    <button class="btn" type="submit">送出資訊</button>
+                </form>
+                <button class="md-close icon-close">關閉視窗</button>
+            </div>
+        </div>*@
+
+    <div id="container">
+        <header>
+            <div class="wrap">
+                <h1 onclick="location.href='@Url.Content("~/Index")'" title="回首頁">中壢青商會黃頁:國際青年商會簡介:商機：商業機會:中壢亞太大會:世界大會:中壢國際青年商會:中壢青商會:青商會:台灣:桃園:中壢：母會子會兄弟會姊妹會：桃園青商大園青商台東青商成功青商：平鎮八德龍潭楊梅埔心一德虎頭山蘆竹觀音大溪</h1>
+
+                <nav id="menu" class="main-nav">
+                    <ul>
+                        <li class="nav1">
+                            <a href="~/AboutUs/AboutUs">青商沿革</a>
+                            <ul class="subnav">
+                                <li><a class="subnav1" href="~/AboutUs/TaiwanJC">國際青商</a></li>
+                                <li><a class="subnav2" href="~/AboutUs/AboutUs">中壢青商</a></li>
+                                <li><a class="subnav3" href="~/AboutUs/Director_42">第42屆理監事</a></li>
+                                <li><a class="subnav4" href="~/AboutUs/Pre_President">歷屆前會長</a></li>
+                                <li><a class="subnav5" href="~/AboutUs/Pre_OB">歷屆OB主席</a></li>
+                                <li><a class="subnav6" href="#">參議員</a></li>
+                                <li><a class="subnav7" href="http://jciyp.org.tw/JCI2007ASPAC/index.asp" target="_blank">中壢亞太大會</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav2">
+                            <a href="~/News/News_list">最新消息</a>
+                        </li>
+                        <li class="nav3">
+                            <a href="~/Activities/Activities_list">活動花絮</a>
+                        </li>
+                        <li class="nav4">
+                            <a href="~/Business/Business">會員商機</a>
+                        </li>
+                        <li class="nav5">
+                            <a href="~/Member/Member">會員總覽</a>
+                        </li>
+                        <li class="nav6">
+                            <a href="~/Doc/Doc_list">會員心得</a>
+                        </li>
+                        <li class="md-close">
+                            <button class="icon-close">關閉視窗</button>
+                        </li><!--手機版選單的關閉按鈕-->
+                    </ul>
+                </nav>
+                <nav class="topnav">
+                    <a href="~/index">回首頁</a>
+                    <a href="http://www.taiwanjc.org.tw/" target="new">總會</a>
+                    <a href="~/Index#calendar">行事曆</a>
+                </nav>
+            </div>
+        </header>
+        @if (ViewBag.IsFirstPage)
+        {
+            <div id="bannerContent"></div>
+        }
+        <div id="main">
+            @RenderBody()
+        </div><!-- main //-->
+    </div><!-- container //-->
+    <footer>
+        <div class="copyright">Junior Chamber International Chung-Li &copy; 1973-2015</div>
+    </footer>
+    <a class="goTop" href="#container">TOP</a>
+    <div class="md-overlay"></div>
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <!-- 讓ie9以下讀懂html5 + css3 -->
+    <!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
+    @RenderSection("Scripts", required: false)
+    <script src="~/Scripts/GoogleAnalytics.js"></script>
+</body>
+</html>

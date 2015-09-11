@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.BodyClass = "Doc";
+    ViewBag.Title = "心得分享";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>DOCUMENT<em>@ViewBag.Title</em></span></h2>
+
+<div id="PageContent"></div>
+@section Scripts {
+    @Scripts.Render("~/document_listWWW")
+}

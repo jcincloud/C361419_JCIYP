@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<gallery>
+   
+   <photo>
+      <filename>pic_1.jpg</filename>
+      <phototitle>page 1</phototitle>
+   </photo>
+   
+   <photo>
+      <filename>pic_2.jpg</filename>
+      <phototitle>page 2</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_3.jpg</filename>
+      <phototitle>page 3</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_4.jpg</filename>
+      <phototitle>page 4</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_5.jpg</filename>
+      <phototitle>page 5</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_6.jpg</filename>
+      <phototitle>page 6</phototitle>
+   </photo>
+   
+   <photo>
+      <filename>pic_7.jpg</filename>
+      <phototitle>page 7</phototitle>
+   </photo>
+   
+ 
+    <photo>
+      <filename>pic_8.jpg</filename>
+      <phototitle>page 8</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_9.jpg</filename>
+      <phototitle>page 9</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_10.jpg</filename>
+      <phototitle>page 10</phototitle>
+   </photo>
+
+ 
+    
+</gallery>

@@ -1,0 +1,50 @@
+﻿@{
+  ViewBag.BodyClass = "JoinUs";
+  ViewBag.Title = "加入我們";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts {
+@Scripts.Render("~/about_usWWW")
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>Join Us<em>@ViewBag.Title</em></span></h2>
+
+<section>
+    <h3>我要加入</h3>
+
+    <p>請填寫完以下相關資料，會有專人盡快與您聯繫喔！</p>
+    <p>在報名完成並繳交「見習會員費」後，您即可以「見習會員」資格見習各個委員會議及參與各式活動，再決定是否正式成為中壢青商的一員喔。</p>
+
+    <form id="joinInfo">
+        <p><label>姓名<span>*</span></label><input type="text" id="m_name" required></p>
+        <p><label>電話 / 手機<span>*</span></label><input type="tel" id="m_tel" required></p>
+        <p><label>電子信箱<span>*</span></label><input type="email" id="m_email" required></p>
+        <p><label>聯絡住址</label><input type="text" id="m_addr"></p>
+        <p><label>興趣</label><input type="text" id="m_interest"></p>
+        <p><label>備註</label><input type="text" id="m_memo"></p>
+        <button class="btn" type="submit">送出資訊</button>
+    </form>
+</section>
+
+<section>
+    <h3>加入青商就是<strong>投資你的未來</strong></h3>
+    <ul class="text-list">
+        <li><em>十大傑出青年選拔</em>發掘 傳遞 複製成功</li>
+        <li><em>講師養成訓練</em>簡報 授課 精彩自信</li>
+        <li><em>金口獎演講</em>培養舞台魅力風采</li>
+        <li><em>奧瑞岡辯論</em>建構團隊整合能力</li>
+        <li><em>會議規範演練</em>談判協商無往不利</li>
+        <li><em>歷練團隊領導</em>養成領袖特質</li>
+        <li><em>國際青年交流</em>接軌國際寬闊視野</li>
+        <li><em>社區活動參與</em>建設家園 豐富鄉里</li>
+    </ul>
+</section>
+
+
+

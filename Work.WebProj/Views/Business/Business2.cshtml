@@ -1,0 +1,35 @@
+﻿@{
+  ViewBag.BodyClass = "Business p2";
+  ViewBag.Category = "會員商機";
+  ViewBag.Title = "特約商店";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li><a href="~/Business/Business">@ViewBag.Category</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>BUSINESS<em>@ViewBag.Category</em></span></h2>
+
+<h3>@ViewBag.Title</h3>
+
+            <!-- 建議一次show15則 -->
+            <div class="table-responsive">
+            <table class="pro-list">
+                <tr>
+                    <th colspan="2">中壢青商會友"本人"憑名片可享多項優惠!!!</th>
+                </tr>
+                <tr>
+                    <td><img src="~/Content/images/Business/coffee.jpg"></td>
+                    <td>
+                        <p>商店名稱：<em>鑫馥陞食品公司(王興順)</em></p>
+                        <p>商店介紹：經營泡沫紅茶原料 \ 咖啡原物料 \ 生產RO衛生冰塊 \ 代理美國三花奶精 \ 雀朝咖啡 \ 阿華田 \ 雀巢美祿 \ 台糖果糖 \ 媽媽家焦糖一系列產品</p>
+                        <p>優惠項目：優質咖啡豆，青商會友一律 折優待…</p>
+                        <p>地址：中壢市新興北街一 巷29號</p>
+                        <p>電話： 4593314</p>
+                    </td>
+                </tr>
+            </table>
+            </div>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.BodyClass = "Member";
+    ViewBag.Category = "會員總覽";
+    ViewBag.Title = "會員資料";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li><a href="~/Member/Member">@ViewBag.Category</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+<h2><span>MEMBER<em>@ViewBag.Title</em></span></h2>
+<div id="PageContent"></div>
+@section Scripts {
+    <script>
+        var gb_id = '@Request.QueryString["id"]';
+    </script>
+    @Scripts.Render("~/member_contentWWW")
+}

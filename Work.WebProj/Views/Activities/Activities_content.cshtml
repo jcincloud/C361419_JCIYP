@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.BodyClass = "Activities";
+    ViewBag.Category = "活動花絮";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@section css {
+    <link href="~/Content/css/fresco/fresco.css" rel="stylesheet">
+}
+@section Scripts {
+    <script>
+        var gb_id = '@Request.QueryString["id"]';
+    </script>
+    <!-- 燈箱 -->
+    <script src="~/Scripts/fresco.js"></script>
+    <!-- 延遲載入 -->
+    <script src="~/Scripts/jquery.lazyloadxt.min.js"></script>
+    <!-- 瀑布流 -->
+    <script src="~/Scripts/freewall.js"></script>
+    <script>
+        // 延遲載入
+        $(document).ready(function () {
+            //$('#main').on('lazyshow', function () {
+            //    $.ajax({...}).done(function (responseText) {
+            //        $(window).lazyLoadXT();
+            //        $('#main').lazyLoadXT({visibleOnly: false, checkDuplicates: false});
+            //    });
+            //}).lazyLoadXT({visibleOnly: false, edgeY: 200});
+
+            //$('#main').lazyLoadXT({ visibleOnly: false, edgeY: 200 });
+
+        });
+        // 瀑布流
+        $(function () {
+            var wall = new freewall(".pic-list");
+            wall.reset({
+                selector: '.item',
+                animate: true,
+                cellW: 200,
+                cellH: 'auto',
+                onResize: function () {
+                    wall.fitWidth();
+                }
+            });
+            var images = wall.container.find('.item');
+            images.find('img').load(function () {
+                wall.fitWidth();
+            });
+        });
+    </script>
+    @Scripts.Render("~/actities_contentWWW")
+}
+
+<!--我把麵包屑拉到jsx了-->
+
+<h2><span>Activities<em>@ViewBag.Category</em></span></h2>
+
+<div class="share">
+    <!-- fb分享 設定分享時彈出視窗 -->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- line分享(手機才看得到) -->
+    <span class="line-share">
+        <script src="//media.line.me/js/line-button.js?v=20140411"></script>
+        <script>
+            new media_line_me.LineButton({ "pc": false, "lang": "zh-hant", "type": "e" });
+        </script>
+    </span>
+</div>
+
+<div id="PageContent"></div>
+
+
+<div class="align-c">
+    <a href="#" onclick="history.back(); return false;" class="btn">回列表</a>
+</div>

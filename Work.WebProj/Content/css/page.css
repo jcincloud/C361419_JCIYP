@@ -1,0 +1,689 @@
+@import "base/basic.css";
+@import "base/layout.css";
+@charset "utf-8";
+
+/*-- Layout --*/
+#container { background: url('../images/bg3.gif') 0 83px repeat-x; }
+
+/* 本文 */
+article { margin-bottom: 20px; }
+
+/* 側欄 */
+aside {
+    width: 250px;
+    border: 1px solid #B2E3E0;
+    padding: .75em;
+}
+aside h4 { margin-top: 0; }
+aside a { font-size: .938em; display: block; margin: 10px 0; }
+
+/*-- commom --*/
+.text-list li { margin: 10px 0; }
+
+/* 麵包屑 */
+.breadcrumb { position: absolute; right: 0; top: 63px; }
+.breadcrumb li {
+    display: inline; float: left;
+    color: #6DBFC2;
+    font-size: .688em;
+}
+.breadcrumb a {
+    background: url('../images/icon_line.gif') right 2px no-repeat;
+    color: #999;
+    padding-right: 7px;
+    margin-right: 5px;
+}
+.breadcrumb a:hover { color: #6DBFC2; }
+
+/* 搜尋(活動,消息) */
+.search { margin:-10px 0 20px 0; }
+.search label { color: #6DBFC2;  font-size: .813em; }
+.search select { margin-left:3px; margin-right: 15px; vertical-align: middle; }
+.search nav { display: inline; }
+.search nav a { color: #67AA68; font-size: .938em; font-weight: bold; }
+.search nav a::after { content: ','; }
+.search nav a:last-child::after { content: '' }
+.search nav a:hover { color: #FFB338; }
+.search input {margin-right:3px;}
+.search button {
+    padding:2px 5px;
+    background: #FFB338;
+    color: #fff;
+    cursor: pointer;
+}
+.search button:hover, .search button:active, .search button:focus {background: #00CED7;}
+
+/* 多欄列表:青商理事會 */
+.grid {
+    float: left;
+    background: url('../images/dot.gif') 0 bottom repeat-x;
+    padding-top: 9px;
+    margin-right: 9px;
+    width: 387px; height: 158px;
+}
+.grid dt, .grid dd { display: table-cell; vertical-align: top; }
+.grid dd {
+    padding: 0 .769em;
+    font-size: .813em;
+    line-height: 140%;
+}
+.grid em {
+    color: #6DBFC3;
+    font-size: 1.154em;
+    font-weight: bold;
+}
+
+/* 圖片列表:歷屆 */
+.pic-list2 { display:table; margin-left:5px; padding:0; }
+.pic-list2 li {
+    background: #E6E6E6;
+    border:1px solid #fff; border-bottom:none;
+    font-size: .875em;
+    font-weight: bold;
+    line-height: 130%;
+    text-align: center;
+
+    float:left; display:inline;
+    padding:15px; padding-bottom:0;
+    height:190px;
+    margin:0 -1px 0 0;
+}
+.pic-list2 a { display:block; }
+.pic-list2 img { display:block; width:100px; height:130px; margin-bottom:7px;}
+
+/* 表格列表:最新消息.文件區 */
+.news-list td { background: transparent; padding: 8px 10px;}
+.news-list tr:nth-child(odd) { background: #F2F2F2; }
+.news-list td:nth-child(2n+1) { color: #BAC5C2; font-size: .813em; text-align: center; width: 9.375em; }
+
+/* 表格列表:會員商機.會員總覽 */
+.pro-list.float-l { float: left; width: 75%; }
+.pro-list tr:nth-child(odd) td { background: #EBEFE0 }
+.pro-list td:nth-child(2n+1) { text-align: center; width: 10.938em }
+.pro-list p { text-indent: -4.933em; margin-left: 4.933em; }
+.pro-list em { color: #E4603B; }
+.pro-list img { max-width: 10em; max-height: 8.667em;}
+/* 表格滑鼠換色 */
+.news-list tr:hover td,
+.pro-list tr:hover td { background: #fdf0d5 }
+
+/*-- 青商沿革 --*/
+.AboutUs section { float: left; width: 49%;}
+.AboutUs section:last-child { float: right; }
+cite h5 { margin: 0 0 5px 0; }
+cite a { margin-right: 15px; font-size: .938em; }
+
+/*-- 最新消息 --*/
+/* 內容 */
+.date { color: #DBE0DB; font-size: .875em; }
+fieldset {
+    border: 1px solid #B2E3E0;
+    padding: .625em 1.25em;
+    margin: 1.25em 0;
+    position: relative;
+}
+legend { font-size: 1.125em; font-weight: bold; color: #67AA68;}
+fieldset em {
+    color: #999;
+    margin-right: .625em;
+}
+fieldset .btn {
+    font-size: 1.063em;
+    width: 9.375em;
+    position: absolute;
+    right: .625em; top: 1.25em;
+}
+fieldset .btn:nth-of-type(2) { top: 5em; }
+
+.download {
+    border-left: 5px solid #5EC7A1;
+    background: #f7f7f7;
+    padding: .938em;
+    margin-bottom: 1.25em;
+}
+.download h6 { margin: 0 0 .813em 0; }
+.download a {
+    display: inline-block;
+    margin:0 2px;
+    padding: 5px 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: .875em;
+}
+.download a:hover { background: #5EC7A1; color: #fff;}
+
+/*-- 活動花絮 --*/
+/* 相冊共用 */
+.album {
+    position: relative;
+    text-align: center;
+}
+.album figure {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+}
+.album img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    width: 100%;
+}
+.album figcaption {
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.album figcaption::before,
+.album figcaption::after { pointer-events: none; }
+.album figcaption,
+.album figcaption::before { position: absolute; top: 0; left: 0; }
+.album figcaption > a,
+.album em {
+    z-index: 1000;
+    white-space: nowrap;
+    opacity: 0;
+}
+.album h4 { font-weight: 800; }
+
+/* 相冊獨立樣式 */
+figure.effect {
+    margin: 6px;
+    width: 375px;
+    height: 250px;
+    background: #003C3F;
+}
+figure.effect figcaption::before {
+    overflow: hidden;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid #6DBFC3;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+    -webkit-transform: scale3d(1.4,1.4,1);
+    transform: scale3d(1.4,1.4,1);
+}
+
+figure.effect h4,
+figure.effect em { position: absolute; }
+
+figure.effect img,
+figure.effect em {
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+}
+figure.effect h4 {
+    background: url(../images/albumBg.png) 0 bottom repeat-x;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+    padding: 37px 5px 5px 5px;
+    width: 100%;
+    bottom: -10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    -webkit-transition: -webkit-transform .35s;
+    transition: transform .35s;
+    box-sizing:border-box;
+}
+
+figure.effect p {
+    max-height: 112px;
+    overflow: hidden;
+    margin: 0 10px;
+    position: relative;
+    top: 70px;
+    opacity: 0;
+    -ms-transition: opacity .35s, -ms-transform .35s;
+    -webkit-transition: opacity .35s, -webkit-transform .35s;
+    transition: opacity .35s, transform .35s;
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+figure.effect p::-webkit-scrollbar{
+width:4px;
+}
+figure.effect p::-webkit-scrollbar-thumb{
+background-color:#666;
+border-radius:2px;
+}
+figure.effect p::-webkit-scrollbar-thumb:hover{
+background-color:#444;
+}
+figure.effect p::-webkit-scrollbar-thumb:active{
+background-color:#444;
+} 
+figure.effect p::-webkit-scrollbar-track{
+background: #ccc;
+border-radius:2px;
+} 
+
+figure.effect a {
+    display: inline-block;
+    width: 135px;
+    border: 1px solid #FFB23B;
+    color: #FFB23B;
+    font-size: .875em;
+    font-weight: bold;
+    padding: 8px;
+    margin:0 2px 5px 2px;
+    zoom: 1;
+}
+figure.effect a:hover {
+    background: #ffb23b;
+    color: #316163;
+}
+figure.effect a span {
+    display: block;
+    width:100%;
+    
+    max-height: 1.2em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+figure.effect:hover h4 {
+    background: none;
+    padding: 0 15px;
+    -webkit-transform: translate3d(0,-12.188em,0);
+    transform: translate3d(0,-12.188em,0);
+}
+figure.effect:hover figcaption::before,
+figure.effect:hover p {
+    opacity: 1;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+figure.effect:hover em {
+    right: 15px; top: 15px;
+    font-size: .75em;
+    color: #fff;
+    opacity: .7;
+}
+figure.effect:hover figcaption { background-color: rgba(25,63,66,0.8); }
+figure.effect:hover img { opacity: 0.5; }
+
+/*-- 活動花絮 --*/
+.pic-list li { float: left; margin-right: 5px;}
+.pic-list img { width: auto; max-height: 12.5em; }
+.Activities .more {
+    display: block;
+    width:6em;
+    margin:0 0 20px 0;
+    position: relative;
+}
+.Activities .more::after {
+    display: block;
+    content:" ";
+    width:0; height:0;
+    position: absolute;
+    left:5.2em; top:4px;
+    border:6px solid transparent;
+    border-left-color:#FFB338;
+}
+
+/*-- 頁籤:會員總覽 --*/
+.tabs { border-bottom: 1px dashed #B2E3E0; overflow: visible; height: 2.563em; }
+.tabs li {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -1px;
+}
+.tabs a {
+    border: 1px solid #EBEFE0; border-bottom: none;
+    background: #EBEFE0;
+    color: #316163;
+    padding: .625em .875em;
+}
+.tabs a:hover,
+.tabs a:active { background: #B2E3E0 }
+.tabs .active a { background: #fff; color: #5CC6A0; top: 3px; }
+
+/*-- 會員資料 --*/
+.Member section.half { font-size: .938em; }
+.Member section.half img { padding: 5px; border: 1px solid #eaeaea; max-width: 10em; max-height: 11.667em;}
+.Member section.float-r h4:nth-of-type(1) { margin-top: 0; }
+.Member section.float-r h4:nth-of-type(2) { clear: both; }
+.Member section .btn { margin: 0 .667em 0 12em; font-size: 1em; }
+dl.text-list { width:380px; min-height: 197px; float: left; line-height: 140%; margin-bottom: 10px; }
+.text-list dt { display: inline-block; float: left;}
+.text-list dd { padding-left: 6.429em; min-height: 1.47em; }
+.Member .pro-list p { text-indent: -5.267em; margin-left: 5.267em; }
+
+/* 分頁 */
+/*
+.pager { clear: both; text-align: center; margin: 30px 0}
+.pager a {
+    display: inline-block;
+    border: 1px solid #B2E3E0;
+    padding: 6px 10px;
+    color: #6DBFC2;
+    font-size: .875em;
+}
+.pager a:hover,
+.pager .current { background: #B2E3E0; color: #fff; }
+.pager > :first-child,
+.pager > :last-child {
+    background: url('../images/icon_arrow.gif') 0 center no-repeat;
+    border: none;
+    text-indent: -9999px;
+    line-height: 1.214em;
+    padding: 0;
+    width: 20px;
+}
+
+.pager > :first-child:hover,
+.pager > :last-child:hover { background: transparent; background-image: url(../images/icon_arrow2.gif); }
+.pager > :last-child,
+.pager > :last-child:hover { background-position: right center }
+*/
+.pagination { clear: both; text-align: center; margin: 30px 0 0 0;}
+.pagination li {
+    display: inline-block;
+    margin-left:-1px;
+    font-size: .875em;
+}
+.pagination li button {
+    height:30px;
+    padding: 6px 10px;
+    line-height: 16px;
+    background: #fff;
+    border: 1px solid #B2E3E0;
+    color: #6DBFC2;
+    cursor: pointer;
+}
+.pagination li button:hover {
+    background: #B2E3E0; color: #fff;
+}
+.pagination li button:disabled {
+    border-color:#ddd;
+    color:#ccc;
+    cursor: default;
+}
+.pagination li button:disabled:hover {
+    color:#ccc;
+    background: #fff;
+}
+.pagination li:first-child button {
+    padding-left:15px;
+    border-radius: 10px 0 0 10px;
+}
+.pagination li:last-child button {
+    padding-right:15px;
+    border-radius: 0 10px 10px 0;
+}
+.pagination li select, .pagination li option {
+    padding:2px 4px 1px 6px;
+    color:#008FD3;
+    font-size: 1em;
+    font-family: \5FAE\8EDF\6B63\9ED1\9AD4, Georgia, sans-serif;
+    background: #6DBFC2; color: #fff;
+}
+.pagination li select:hover, .pagination li option:hover,
+.pagination li select:focus, .pagination li option:focus {
+    background: #00CDD6;
+}
+.pagination li select {
+    height:30px;
+    margin-top:-3px;
+    border: 1px solid #6DBFC2;
+    cursor: pointer;
+}
+.pager {
+    margin:15px 0;
+    text-align: center;
+    font-size: .875em;
+    color:#666;
+}
+.pager input {
+    width:50px;
+    text-align: center;
+    color:#666;
+    background: #f2f2f2;
+}
+.pager input:hover, .pager input:focus {
+    color:#fff;
+    background: #00CDD6;
+}
+.pager span {
+    font-weight: bold;
+}
+
+/* 延遲顯示動畫 */
+.lazy-hidden {
+    opacity: 0;
+}
+.lazy-loaded {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+/* Join Us */
+.JoinUs .main-nav {background: none;}
+.JoinUs section, .JoinUs section * {box-sizing:border-box;}
+.JoinUs section {float:right; width: 49%; padding: 0 15px;}
+.JoinUs section:nth-child(4) {float:left;}
+.JoinUs section .text-list {margin-top:20px;}
+.JoinUs section .text-list li {padding-bottom:10px; border-bottom:1px dotted #ccc;}
+.JoinUs section .text-list li em {
+    position: relative;
+    padding-right:15px;
+    font-weight: bold;
+    font-size: 1.125em;
+    color:#1C81C0;
+}
+.JoinUs section .text-list li em:before {
+    content:" ";
+    display: inline-block;
+    width:0; height:0;
+    position: absolute;
+    right:0; top:6px;
+    border:6px solid transparent;
+    border-left-color:#FFB338;
+}
+.JoinUs section #joinInfo {
+    margin-top:15px;
+    padding:10px 15px;
+    color:#008FD3;
+    background: #F5F5F5;
+}
+.JoinUs section #joinInfo p {
+    padding-left:6.5em;
+}
+.JoinUs section #joinInfo label {
+    display:block;
+    width:6em;
+    float:left;
+    margin-left:-6.5em;
+    text-align: right;
+    font-weight: bold;
+}
+.JoinUs section #joinInfo label span {margin-left:3px; color:#C90A2E;}
+.JoinUs section #joinInfo input {
+    width:100%;
+    color:#333;
+    background: #E6EAE9;
+    font-family: 'Georgia', 'Microsoft Jhenghei', '\5FAE\8EDF\6B63\9ED1\9AD4', sans-serif;
+}
+.JoinUs section #joinInfo input:hover, #joinInfo input:focus {background:#FFE8BA;}
+.JoinUs section #joinInfo button {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Georgia', 'Microsoft Jhenghei', '\5FAE\8EDF\6B63\9ED1\9AD4', sans-serif;
+}
+
+/*      IE9- heck
+-----------------------------------------------------------------------*/
+figure.effect:hover h4 { top: 20px\0; }
+
+
+
+/*      Responsive Design
+-----------------------------------------------------------------------*/
+/*-- PC w1200+ --*/
+@media (min-width: 1200px) {
+
+}
+
+
+/*-- PC --*/
+@media (max-width: 1199px) {
+
+/* layout */
+aside {width: 220px;}
+
+/* AboutUs */
+.grid {width:374px;}
+.pic-list2 li {padding:17px 17px 0 17px; height:192px;}
+
+/* Activities */
+figure.effect {width: 308px; height:205px;}
+figure.effect:hover h4 {
+    -webkit-transform: translate3d(0,-163px,0);
+    transform: translate3d(0,-163px,0);
+}
+figure.effect a {width:105px;}
+
+/* Business */
+.pro-list.float-l {width: 704px;}
+
+/* Member */
+.Member section .btn {margin-left:0; margin-top:8px;}
+
+}
+
+
+/*-- 平板 --*/
+@media (max-width: 979px) {
+
+/* layout */
+#container { background-position: 0 97px;}
+aside, aside.float-r {float:none; width:100%; margin-left:0; box-sizing:border-box;}
+aside a {
+    display: inline-block;
+    margin:5px 0 5px 3px;
+    padding-right:8px;
+    border-right:1px solid #ddd;
+}
+aside a:last-child {padding-right:0; border-right:0;}
+
+/* AboutUs */
+.AboutUs section {float:none; width:100%;}
+.grid {width:370px;}
+.pic-list2 li {padding:12px 12px 0 12px; height:187px;}
+
+/* Activities */
+figure.effect {width: 365px; height:243px}
+figure.effect:hover h4 {
+    -webkit-transform: translate3d(0,-195px,0);
+    transform: translate3d(0,-195px,0);
+}
+figure.effect a {width:135px;}
+
+/* Business */
+.pro-list.float-l {float:none; width: 100%; margin-right:0;}
+
+/* Member */
+.Member section .btn {margin-bottom:8px;}
+.Member section .btn + em:before {content:" "; display: block;}
+
+/* JoinUs */
+.JoinUs h3 strong {display: block; margin-left:0; margin-top:5px;}
+
+}
+
+/*--  平板+phone --*/
+@media (max-width: 767px) {
+
+/* layout */
+menu button:hover {color:#E4603B;}
+menu button:before:hover {color:#FFAD2B;}
+.breadcrumb {top:120px; right:5px;}
+
+/* AboutUs */
+.grid {width:100%;}
+
+/* News */
+fieldset .btn {position: static;}
+
+/* Activities */
+figure.effect {max-width:96%; height:160px;}
+figure.effect:hover h4 {
+    -webkit-transform: translate3d(0,-105px,0);
+    transform: translate3d(0,-105px,0);
+}
+figure.effect p {max-height: 62px;}
+figure.effect a {width:135px; padding:5px;}
+.pic-list img {max-height:10em;}
+
+/* Member */
+dl.text-list {width:calc(100% - 170px);}
+.Member section .btn {float:left; margin-left:176px; margin-top:0;}
+.Member section .btn + em {float:left; margin-top:9px;}
+.Member section .btn + em:before {display: none;}
+
+/*JoinUs*/
+.JoinUs section {float:none; width:100%; padding:0;}
+.JoinUs section+section {margin-top:20px;}
+.JoinUs h3 strong {display: inline-block; margin-left:5px; margin-top:0;}
+
+}
+
+/*--  3.5吋-4.9吋(phone)橫+直 --*/
+@media (max-width: 479px) {
+
+/* layout */
+#container { background-position: 0 163px;}
+#main {margin-top:50px;}
+.breadcrumb {top:175px;}
+
+/* AboutUs */
+.grid {height:auto; padding-bottom:5px;}
+.grid dt img {width:80px;}
+
+/* News */
+.search select {margin-right:0;}
+.search select:after {
+    content:" "; display: block; margin-bottom:5px;
+}
+.search span:before {content:" "; display: block; margin-bottom:8px;}
+fieldset em:before {content:" "; display: block; margin-bottom:8px;}
+fieldset em:first-child:before {display: none;}
+.pagination li button {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.pagination li:first-child button {padding-left:8px;}
+.pagination li:last-child button {padding-right:8px;}
+
+/* Activities */
+figure.effect a {width:105px;}
+
+/* Member */
+dl.text-list {width:100%; float:none; min-height: 0;}
+.Member section .btn {float:none; margin-left:0;}
+.Member section .btn + em {float:none;}
+
+/* JoinUs */
+.JoinUs h3 strong {display: block; margin-left:0; margin-top:5px;}
+.JoinUs section .text-list li em {padding-right:0;}
+.JoinUs section .text-list li em:before {right:-15px;}
+.JoinUs section .text-list li em:after {content:" "; display: block; margin-bottom:5px;}
+
+}

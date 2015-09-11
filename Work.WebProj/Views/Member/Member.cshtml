@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.BodyClass = "Member";
+    ViewBag.Title = "會員總覽";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>MEMBER<em>@ViewBag.Title</em></span></h2>
+
+<h3>依入會時間排序</h3>
+<div id="PageContent"></div>
+@section Scripts {
+    @Scripts.Render("~/member_listWWW")
+}

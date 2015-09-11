@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.BodyClass = "News";
+    ViewBag.Title = "最新消息";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li class="s"><a href="~/Index">HOME</a></li>
+    <li>@ViewBag.Title</li>
+</ul>
+
+<h2><span>NEWS<em>@ViewBag.Title</em></span></h2>
+<div id="PageContent"><!--ScriptsJSX news_listW.jsx--></div>
+@section Scripts {
+    @Scripts.Render("~/news_listWWW")
+}
