@@ -1186,7 +1186,6 @@ namespace DotWeb
     #endregion
 
     #region 泛型控制器擴充
-
     public abstract class CtrlId<M, Q> : BaseController
         where M : new()
         where Q : QueryBase
@@ -1213,7 +1212,6 @@ namespace DotWeb
         public abstract Task<string> aj_MasterUpdate(M md);
         public abstract Task<string> aj_MasterGet(Int32 id);
     }
-
     public abstract class CtrlSN<M, Q> : BaseController
         where M : new()
         where Q : QueryBase
@@ -1227,7 +1225,6 @@ namespace DotWeb
         public abstract String aj_MasterUpdate(M md);
         public abstract String aj_MasterGet(string sn);
     }
-
     public abstract class CtrlTSN<M, Q> : BaseController
         where M : new()
         where Q : QueryBase
@@ -1241,7 +1238,6 @@ namespace DotWeb
         public abstract Task<string> aj_MasterUpdate(M md);
         public abstract Task<string> aj_MasterGet(string sn);
     }
-
     public abstract class CtrlIdId<M, Q, Ms, Qs> : CtrlId<M, Q>
         where M : new()
         where Q : QueryBase
@@ -1258,7 +1254,6 @@ namespace DotWeb
         public abstract string aj_DetailUpdate(Ms md);
         public abstract string aj_DetailDelete(Int32[] ids);
     }
-
     public abstract class CtrlIdSN<M, Q, Ms, Qs> : CtrlId<M, Q>
         where M : new()
         where Q : QueryBase
@@ -1275,7 +1270,6 @@ namespace DotWeb
         public abstract string aj_DetailUpdate(Ms md);
         public abstract string aj_DetailDelete(Int32[] ids);
     }
-
     public abstract class CtrlSNSN<M, Q, Ms, Qs> : CtrlSN<M, Q>
         where M : new()
         where Q : QueryBase
@@ -1292,8 +1286,6 @@ namespace DotWeb
         public abstract string aj_DetailUpdate(Ms md);
         public abstract string aj_DetailDelete(int id);
     }
-
-
     public abstract class CtrlTSNTSN<M, Q, Ms, Qs> : CtrlTSN<M, Q>
         where M : new()
         where Q : QueryBase
@@ -1310,7 +1302,6 @@ namespace DotWeb
         public abstract Task<string> aj_DetailUpdate(Ms md);
         public abstract Task<string> aj_DetailDelete(int id);
     }
-
     #endregion
     public class AjaxGetData<T> : ResultInfo
     {
