@@ -235,13 +235,26 @@ var GirdForm = React.createClass({
 		this.handleSubmit(e);
 		this.insertType();
 	},
+	excelPrint:function(e){
+		e.preventDefault();
+
+		var print_url = gb_approot + 'Sys_Base/ExcelReport/downloadExcel_allMemberPrint?';
+
+		this.setState({download_src:print_url});
+		return;
+	},
 	render: function() {
 		var outHtml = null;
 
 		if(this.state.edit_type==0)
 		{
 			var searchData = this.state.searchData;
-
+			var printHtml=null;
+			if(is_a){
+				printHtml=(
+					<button className="btn-success btn-sm" type="button" onClick={this.excelPrint}><i className="fa-print"></i> 列印</button>
+					);
+			}
 			outHtml =
 			(
 				<div>
@@ -288,7 +301,8 @@ var GirdForm = React.createClass({
 											value={searchData.name}
 											onChange={this.changeGDValue.bind(this,'name')}
 											placeholder="請輸入關鍵字..." />
-											<button className="btn-primary btn-sm" type="submit"><i className="fa-search"></i> 搜尋</button>
+											<button className="btn-primary btn-sm" type="submit"><i className="fa-search"></i> 搜尋</button> { }
+											{printHtml}
 										</div> { }
 									</div>
 								</div>
@@ -344,6 +358,7 @@ var GirdForm = React.createClass({
 						showDelete={!is_user}
 						/>
 					</form>
+					<iframe src={this.state.download_src} style={ {visibility:'hidden',display:'none'} } />
 				</div>
 			);
 		}

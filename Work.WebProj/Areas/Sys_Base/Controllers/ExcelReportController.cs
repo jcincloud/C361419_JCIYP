@@ -156,5 +156,105 @@ namespace DotWeb.Areas.Sys_Base.Controllers
                 db0.Dispose();
             }
         }
+
+        public FileResult downloadExcel_allMemberPrint()
+        {
+            ExcelPackage excel = null;
+            MemoryStream fs = null;
+            var db0 = getDB0();
+            try
+            {
+
+                fs = new MemoryStream();
+                excel = new ExcelPackage(fs);
+                excel.Workbook.Worksheets.Add("memberData");
+                ExcelWorksheet sheet = excel.Workbook.Worksheets["memberData"];
+
+                sheet.View.TabSelected = true;
+                #region 取得客戶資料
+                var items = (from x in db0.會員
+                             orderby x.流水號
+                             select (new m_會員()
+                             {
+                                 流水號 = x.流水號,
+                                 會員編號 = x.會員編號,
+                                 姓名 = x.姓名,
+                                 入會日期 = x.入會日期,
+                                 生日 = x.生日,
+                                 行動電話 = x.行動電話,
+                                 住家電話 = x.住家電話,
+                                 地址 = x.地址
+                             }));
+
+
+                var getPrintVal = items.ToList();
+
+
+                #endregion
+
+
+                #region Excel Handle
+
+                int detail_row = 3;
+
+                #region 標題
+                sheet.Cells[1, 1].Value = "會員名單";
+                sheet.Cells[1, 1, 1, 8].Merge = true;
+                sheet.Cells[2, 1].Value = "[流水號]";
+                sheet.Cells[2, 2].Value = "[會員編號]";
+                sheet.Cells[2, 3].Value = "[姓名]";
+                sheet.Cells[2, 4].Value = "[入會日期]";
+                sheet.Cells[2, 5].Value = "[生日]";
+                sheet.Cells[2, 6].Value = "[行動電話]";
+                sheet.Cells[2, 7].Value = "[住家電話]";
+                sheet.Cells[2, 8].Value = "[地址]";
+                #endregion
+
+                #region 內容
+                foreach (var item in getPrintVal)
+                {
+
+                    sheet.Cells[detail_row, 1].Value = item.流水號;
+                    sheet.Cells[detail_row, 2].Value = item.會員編號;
+                    sheet.Cells[detail_row, 3].Value = item.姓名;
+                    sheet.Cells[detail_row, 4].Value = item.入會日期;
+                    sheet.Cells[detail_row, 5].Value = item.生日;
+                    sheet.Cells[detail_row, 6].Value = item.行動電話;
+                    sheet.Cells[detail_row, 7].Value = item.住家電話;
+                    sheet.Cells[detail_row, 8].Value = item.地址;
+
+                    detail_row++;
+                }
+                #endregion
+
+                #region excel排版
+                int startColumn = sheet.Dimension.Start.Column;
+                int endColumn = sheet.Dimension.End.Column;
+                for (int j = startColumn; j <= endColumn; j++)
+                {
+                    //sheet.Column(j).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;//靠左對齊
+                    //sheet.Column(j).Width = 30;//固定寬度寫法
+                    sheet.Column(j).AutoFit();//依內容fit寬度
+                }//End for
+                #endregion
+                //sheet.Cells.Calculate(); //要對所以Cell做公計計算 否則樣版中的公式值是不會變的
+
+                #endregion
+
+                string filename = "會員名單" + "[" + DateTime.Now.ToString("yyyyMMddHHmm") + "].xlsx";
+                excel.Save();
+                fs.Position = 0;
+                return File(fs, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", filename);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return null;
+            }
+            finally
+            {
+                db0.Dispose();
+            }
+        }
     }
 }

@@ -31,6 +31,18 @@
     }
     else
     {
+        if (ViewBag.RoleName == "Admins")
+        {
+            <script>
+                var is_a = true;
+            </script>
+        }
+        else
+        {
+            <script>
+                var is_a = false;
+            </script>
+        }
         <script>
             var is_user = false;
         </script>

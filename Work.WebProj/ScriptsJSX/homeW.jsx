@@ -141,12 +141,12 @@ var BannerRotator = React.createClass({
 		(
 		<div id="banner" className="flexslider">
 			<ul className="slides">
-			<li>
+			{/*<li>
 			    <span><a href="/jljc2015" target="_blank"><img src="/Content/images/Event/banner.jpg" alt="就是要劊業" /></a></span>
 			    <span><a href="/jljc2015" target="_blank"><img src="/Content/images/Event/banner2.jpg" alt="創業競賽" /></a></span>
 			    <span><a href="/jljc2015" target="_blank"><img src="/Content/images/Event/banner3.jpg" alt="創業論壇" /></a></span>
 			    <span><a href="/jljc2015" target="_blank"><img src="/Content/images/Event/banner4.jpg" alt="創業大講" /></a></span>
-			</li>
+			</li>*/}
 			{
 				this.state.banner_data.map(function(itemData,i) {
 					var subOutHtml = 
