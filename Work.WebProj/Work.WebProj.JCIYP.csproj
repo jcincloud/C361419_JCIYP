@@ -28,6 +28,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -303,7 +304,26 @@
     <Content Include="Content\images\AboutUs\40\Thumbs.db" />
     <Content Include="Content\images\AboutUs\41\Thumbs.db" />
     <Content Include="Content\images\AboutUs\42\Thumbs.db" />
+    <Content Include="Content\images\AboutUs\43\01_pre.jpg" />
+    <Content Include="Content\images\AboutUs\43\02_c_pre.jpg" />
+    <Content Include="Content\images\AboutUs\43\03_v_pre1.jpg" />
+    <Content Include="Content\images\AboutUs\43\03_v_pre2.jpg" />
+    <Content Include="Content\images\AboutUs\43\04_sec.jpg" />
+    <Content Include="Content\images\AboutUs\43\05_fin.jpg" />
+    <Content Include="Content\images\AboutUs\43\06_adv.jpg" />
+    <Content Include="Content\images\AboutUs\43\07_ever_sup.jpg" />
+    <Content Include="Content\images\AboutUs\43\08_sup1.jpg" />
+    <Content Include="Content\images\AboutUs\43\08_sup2.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir1.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir2.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir3.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir4.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir5.jpg" />
+    <Content Include="Content\images\AboutUs\43\09_dir6.jpg" />
+    <Content Include="Content\images\AboutUs\OB_President\33.jpg" />
+    <Content Include="Content\images\AboutUs\OB_President\34.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\Thumbs.db" />
+    <Content Include="Content\images\AboutUs\Previous\42.jpg" />
     <Content Include="Content\images\AboutUs\Previous\Thumbs.db" />
     <Content Include="Content\images\AboutUs\Senator\imgallery.xml" />
     <Content Include="Content\download\doc.rar" />
@@ -1117,6 +1137,7 @@
     <Content Include="ScriptsJSXM\bannervideoM.jsx" />
     <Content Include="_Code\RPTExcel\LabelPrint.xlsx" />
     <Content Include="Views\Jljc2015\jljc2015.cshtml" />
+    <Content Include="Views\AboutUs\Director_43.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\base\basic.css" />
