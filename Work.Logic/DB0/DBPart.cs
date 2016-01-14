@@ -122,7 +122,10 @@ namespace ProcCore.Business.DB0
     {
         public FilesObject[] fileList { get; set; }
     }
-
+    public partial class 文件管理
+    {
+        public FilesObject[] fileList { get; set; }
+    }
 
     #endregion
 

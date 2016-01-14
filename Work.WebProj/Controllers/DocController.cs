@@ -1,4 +1,6 @@
-﻿using ProcCore.HandleResult;
+﻿using ProcCore.Business.DB0;
+using ProcCore.HandleResult;
+using System.Linq;
 using System.Web.Mvc;
 namespace DotWeb.Controllers
 {
@@ -10,14 +12,27 @@ namespace DotWeb.Controllers
         }
         public ActionResult Doc_content(int? id)
         {
+            文件管理 item;
             using (db0 = getDB0())
             {
-                if (id != null) {
-                    ViewBag.Title = db0.文件管理.Find(id).標題;
+                bool Exist = db0.文件管理.Any(x => x.流水號 == id && x.顯示狀態Flag);
+
+                if (id == null || !Exist)
+                {
+                    return Redirect("~/Doc/Doc_list");
+                }
+                else
+                {
+                    item = db0.文件管理.Find(id);
+
+                    item.fileList = listDocFiles(item.流水號, "file1", "DocManage", "DocManage");
+
+                    ViewBag.Title = item.標題;
                     ViewBag.Url = Request.Url.AbsoluteUri;
                 }
+
             }
-            return View();
+            return View(item);
         }
         [HttpPost]
         public string aj_FList(int id, string filekind)
