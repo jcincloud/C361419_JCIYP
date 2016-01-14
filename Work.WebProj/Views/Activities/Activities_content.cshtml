@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProcCore.Business.DB0.活動花絮主檔
+@{
     ViewBag.BodyClass = "Activities";
     ViewBag.Category = "活動花絮";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -29,28 +30,9 @@
             //$('#main').lazyLoadXT({ visibleOnly: false, edgeY: 200 });
 
         });
-        // 瀑布流
-        $(function () {
-            var wall = new freewall(".pic-list");
-            wall.reset({
-                selector: '.item',
-                animate: true,
-                cellW: 200,
-                cellH: 'auto',
-                onResize: function () {
-                    wall.fitWidth();
-                }
-            });
-            var images = wall.container.find('.item');
-            images.find('img').load(function () {
-                wall.fitWidth();
-            });
-        });
     </script>
-    @Scripts.Render("~/actities_contentWWW")
+    @*@Scripts.Render("~/actities_contentWWW")*@
 }
-
-<!--我把麵包屑拉到jsx了-->
 
 <h2><span>Activities<em>@ViewBag.Category</em></span></h2>
 
@@ -75,9 +57,62 @@
     </span>
 </div>
 
-<div id="PageContent"></div>
+<div>
+    <ul class="breadcrumb">
+        <li class="s"><a href="Index">HOME</a></li>
+        <li><a href="~/Activities/Activities_list">活動花絮</a></li>
+        <li><a href="~/Activities/Activities_list/@Model.活動日期.Year">@Model.活動日期.Year 年</a></li>
+        <li>@Model.標題</li>
+    </ul>
+    <div class="share">
+        <div class="fb-share-button" data-href="http://www.jciyp.org.tw/Activities/Activities_content?id=@Model.流水號&t=@CommWebSetup.CacheVerV2" data-layout="button"></div>
+        <a class="g-plus" href=@("https://plus.google.com/share?url={http://www.jciyp.org.tw/Activities/Activities_content?id=" + Model.流水號+"}") onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+        </a>
+    </div>
+    <h3 id="actitiesTitle"><em>@Model.活動日期.ToString("yyyy-MM-DD")</em>@Model.標題</h3>
+    @foreach (var detail in Model.IContext)
+    {
+        <div>
+            <h4 id="@detail.流水號">@detail.標題</h4>
+            <ol class="pic-list">
+                @if (detail.imgsrcs != null)
+                {
+                    foreach (var img in detail.imgsrcs)
+                    {
+                        <li class="item"><a href="@img" class="fresco" data-fresco-group="shared_options"><img data-src="@img" /></a></li>
+                    }
+                }
 
+            </ol>
+            @if (detail.相簿連結 != null)
+                {
+                <a class="more" target="_blank" href="@detail.相簿連結">看更多照片</a>
+            }
+        </div>
+    }
+</div>
 
+@*<div id="PageContent"></div>*@
 <div class="align-c">
     <a href="#" onclick="history.back(); return false;" class="btn">回列表</a>
 </div>
+<script>
+    // 瀑布流
+    $(document).ready(function () {
+        var wall = new freewall(".pic-list");
+        wall.reset({
+            selector: '.item',
+            animate: true,
+            cellW: 200,
+            cellH: 'auto',
+            onResize: function () {
+                wall.fitWidth();
+            }
+        });
+        var images = wall.container.find('.item');
+        images.find('img').load(function () {
+            wall.fitWidth();
+        });
+    });
+</script>

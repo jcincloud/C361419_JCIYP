@@ -108,7 +108,7 @@ namespace DotWeb
             UserId = getUserIdCookie == null ? null : getUserIdCookie.Value;
 
             ViewBag.UserId = UserId;
-            ViewBag.UserName = getUserName == null ? "" : Server.UrlDecode(getUserName.Value);          
+            ViewBag.UserName = getUserName == null ? "" : Server.UrlDecode(getUserName.Value);
 
             var aspnet_user_id = User.Identity.GetUserId();
             if (aspnet_user_id != null)
@@ -118,7 +118,7 @@ namespace DotWeb
                 var role = roleManager.FindById(asp_net_roles);
                 ViewBag.RoleName = role.Name;
             }
-            
+
         }
 
         public ApplicationUserManager UserManager
@@ -608,7 +608,7 @@ namespace DotWeb
             else if (Directory.Exists(server_path_m))
             {
                 var get_image_files = Directory.EnumerateFiles(server_path_m)
-                    .Where(x => x.ToLower().EndsWith("jpg") || x.EndsWith("jpeg") || x.EndsWith("png") || x.EndsWith("gif"));
+                    .Where(x => x.ToLower().EndsWith("jpg") || x.EndsWith("jpeg") || x.EndsWith("png") || x.EndsWith("gif") || x.EndsWith("JPG") || x.EndsWith("JPEG") || x.EndsWith("PNG") || x.EndsWith("GIF"));
 
                 foreach (string get_file in get_image_files)
                 {
