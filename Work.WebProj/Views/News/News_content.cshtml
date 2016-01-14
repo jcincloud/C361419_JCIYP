@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProcCore.Business.DB0.最新消息
+@{
     ViewBag.BodyClass = "News";
     ViewBag.Category = "最新消息";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -11,16 +12,15 @@
     <!-- fb分享 -->
     <div id="fb-root"></div>
     <script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=374333872702952";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=374333872702952";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <!-- fb分享 data-href需輸入網址參數 -->
     <!-- g+分享 url=需輸入網址參數 -->
-    
     <!-- line分享(手機才看得到) -->
     <span class="line-share">
         <script src="//media.line.me/js/line-button.js?v=20140411"></script>
@@ -30,13 +30,67 @@
     </span>
 </div>
 
+<div>
+    <ul class="breadcrumb">
+        <li class="s"><a href="Index">HOME</a></li>
+        <li><a href="~/News/News_list">最新消息</a></li>
+        <li>@Model.標題</li>
+    </ul>
+    <div class="share">
+        <div class="fb-share-button" data-href="~/News/News_content?id=@Model.流水號&t=@CommWebSetup.CacheVerV2" data-layout="button"></div>
+        <a class="g-plus" href=@("https://plus.google.com/share?url={http://www.jciyp.org.tw/News/News_content?id="+Model.流水號+"}") onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+        </a>
+
+    </div>
+    <article>
+        <div class="date">
+            <span>@Model.活動日期.ToLongDateString()</span>
+        </div>
+
+        <h3>@Model.標題</h3>
+        <fieldset>
+            <legend>活動資訊</legend>
+            <div className="editor">
+                @Html.Raw(Model.內容)
+            </div>
+        </fieldset>
+    </article>
+    <section class="download">
+        <h6>相關檔案下載:</h6>
+
+        @foreach (var file in Model.fileList)
+        {
+            <a href="#" onclick="PopupCenter('@file.OriginFilePath', 'new', '780', '720')">@file.FileName</a>
+        }
+
+    </section>
+</div>
+
 <div id="PageContent"><!--ScriptsJSX news_contentW.jsx--></div>
 <div class="align-c">
     <a href="~/News/News_list" class="btn">回列表</a>
 </div>
 @section Scripts {
+    @*<script>
+            var gb_id = '@Request.QueryString["id"]';
+        </script>
+        @Scripts.Render("~/news_contentWWW")*@
     <script>
-        var gb_id = '@Request.QueryString["id"]';
+        function PopupCenter(url, title, w, h, e) {
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+            width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+            if (window.focus) {
+                newWindow.focus();
+            }
+        }
     </script>
-    @Scripts.Render("~/news_contentWWW")
 }

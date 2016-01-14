@@ -7,6 +7,8 @@ using System.Data.Entity.Validation;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
+using ProcCore.HandleResult;
+
 namespace ProcCore.Business.DB0
 {
     public enum EditState
@@ -115,7 +117,10 @@ namespace ProcCore.Business.DB0
         public string[] imgsrc { get; set; }
         public EditState edit_state { get; set; }
     }
-
+    public partial class 最新消息
+    {
+        public FilesObject[] fileList { get; set; }
+    }
 
 
     #endregion

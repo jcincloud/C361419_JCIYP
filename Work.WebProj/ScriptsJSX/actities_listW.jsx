@@ -20,7 +20,7 @@ var Figcaption = React.createClass({
 				<p>
 				{
 					this.props.itemData.活動花絮內容.map(function(itemData,i) {
-						var subOutHtml = <a key={i} href={gb_approot + 'Activities/Activities_content?ID=' + this.props.itemData.流水號 + '&tag=' + itemData.流水號 + '#' + itemData.流水號}><span>{itemData.標題}</span></a>;
+						var subOutHtml = <a key={i} href={gb_approot + 'Activities/Activities_content?ID=' + this.props.itemData.流水號 + '&tag=' + itemData.流水號 +'&t='+uniqid()+ '#' + itemData.流水號}><span>{itemData.標題}</span></a>;
 						return subOutHtml;
 					}.bind(this))
 				}

@@ -1,4 +1,6 @@
-﻿using ProcCore.HandleResult;
+﻿using ProcCore.Business.DB0;
+using ProcCore.HandleResult;
+using System.Linq;
 using System.Web.Mvc;
 namespace DotWeb.Controllers
 {
@@ -10,15 +12,27 @@ namespace DotWeb.Controllers
         }
         public ActionResult News_content(int? id)
         {
+            最新消息 item;
             using (db0 = getDB0())
             {
-                if (id != null)
+                bool Exist = db0.最新消息.Any(x => x.流水號 == id && x.顯示狀態Flag);
+
+                if (id == null || !Exist)
                 {
-                    ViewBag.Title = db0.最新消息.Find(id).標題;
+                    return Redirect("~/News/News_list");
+                }
+                else
+                {
+                    item = db0.最新消息.Find(id);
+
+                    item.fileList = listDocFiles(item.流水號, "file1", "News", "News");
+
+                    ViewBag.Title = item.標題;
                     ViewBag.Url = Request.Url.AbsoluteUri;
                 }
+
             }
-            return View();
+            return View(item);
         }
 
 

@@ -93,6 +93,17 @@ namespace DotWeb.CommSetup
                 return GetKeyValue("CacheVer");
             }
         }
+        public static string CacheVerV2
+        {
+            get
+            {
+                var v = GetKeyValue("CacheVerV2");
+                if (v == "0")
+                    return Guid.NewGuid().ToString();
+                else
+                    return v;
+            }
+        }
         public static int Limit_Max_Apply_Days
         {
             get

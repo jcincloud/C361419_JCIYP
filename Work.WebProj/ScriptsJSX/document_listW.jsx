@@ -105,7 +105,7 @@ var PageContent = React.createClass({
 							var subOutHtml = 
 							<tr>
 							<td>{moment(itemData.活動日期).format('YYYY-MM-DD')}</td>
-							<td><a href={this.props.contextUrl + itemData.流水號}>{itemData.標題}</a></td>
+							<td><a href={this.props.contextUrl + itemData.流水號+'&t='+uniqid()}>{itemData.標題}</a></td>
 							</tr>;
 							return subOutHtml;
 						}.bind(this))
