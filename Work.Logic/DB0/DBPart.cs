@@ -104,6 +104,7 @@ namespace ProcCore.Business.DB0
         public float 排序 { get; set; }
         public string 相簿連結 { get; set; }
         public string[] imgsrc { get; set; }
+        public List<string> imgsrcs { get; set; }
     }
 
     public partial class 活動花絮內容 : BaseEntityTable
@@ -121,7 +122,10 @@ namespace ProcCore.Business.DB0
     {
         public FilesObject[] fileList { get; set; }
     }
-
+    public partial class 文件管理
+    {
+        public FilesObject[] fileList { get; set; }
+    }
 
     #endregion
 

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProcCore.Business.DB0.文件管理
+@{
     ViewBag.BodyClass = "Doc p1"; <!--p1:心得分享, p2:會議記錄, p3:文件範本-->
     ViewBag.Category = "文件區";
     //ViewBag.Title = "心得分享"; <!--心得分享, 會議記錄, 文件範本-->
@@ -34,14 +35,58 @@
     </span>
 </div>
 
+
+<div>
+    <div class="share">
+        <div class="fb-share-button" data-href="http://www.jciyp.org.tw/Doc/Doc_content?id=@Model.流水號&t=@CommWebSetup.CacheVerV2" data-layout="button"></div>
+        <a class="g-plus" href=@("https://plus.google.com/share?url={http://www.jciyp.org.tw/Doc/Doc_content?id=" + Model.流水號+"}") onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+" />
+        </a>
+    </div>
+    <article>
+        <div class="date">
+            <span>@Model.活動日期.ToLongDateString()</span>
+        </div>
+        <h3>@Model.標題</h3>
+        <p className="editor">@Html.Raw(Model.內容)</p>
+    </article>
+    <section class="download">
+        <h6>相關檔案下載:</h6>
+
+        @foreach (var file in Model.fileList)
+        {
+            <a href="#" onclick="PopupCenter('@file.OriginFilePath', 'new', '780', '720')">@file.FileName</a>
+        }
+
+    </section>
+</div>
+
 <div id="PageContent"></div>
 <div class="align-c">
     <a href="~/Doc/Doc_list" class="btn">回列表</a>
 </div>
 @section Scripts {
-    <script>
-        var gb_id = '@Request.QueryString["id"]';
-    </script>
+    @*<script>
+            var gb_id = '@Request.QueryString["id"]';
+        </script>
 
-    @Scripts.Render("~/document_contentWWW")
+        @Scripts.Render("~/document_contentWWW")*@
+
+    <script>
+        function PopupCenter(url, title, w, h, e) {
+            var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+            var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+            width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+            var top = ((height / 2) - (h / 2)) + dualScreenTop;
+            var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+            if (window.focus) {
+                newWindow.focus();
+            }
+        }
+    </script>
 }
