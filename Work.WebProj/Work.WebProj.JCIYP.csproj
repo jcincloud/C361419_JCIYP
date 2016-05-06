@@ -267,7 +267,7 @@
     <Content Include="Areas\Sys_Active\Views\MemberPrint\OtherUnit.cshtml" />
     <Content Include="Areas\Sys_Active\Views\BannerVideo\Main.cshtml" />
     <None Include="Areas\Sys_Base\Controllers\ReportChartController.cs" />
-    <Compile Include="Areas\Sys_Base\Controllers\ReportToPdfController.cs" />
+    <None Include="Areas\Sys_Base\Controllers\ReportToPdfController.cs" />
     <Compile Include="Areas\Sys_Base\Controllers\RolesController.cs" />
     <Compile Include="Areas\Sys_Base\Controllers\UsersController.cs" />
     <Compile Include="Areas\Sys_Base\Sys_BaseAreaRegistration.cs" />
