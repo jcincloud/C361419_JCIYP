@@ -421,6 +421,7 @@
     <Compile Include="Controllers\Api\NewsDataController.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\DocController.cs" />
+    <Compile Include="Controllers\JljcController.cs" />
     <Compile Include="Controllers\Jljc2015Controller.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\JoinUsController.cs" />
@@ -1139,6 +1140,7 @@
     <Content Include="_Code\RPTExcel\LabelPrint.xlsx" />
     <Content Include="Views\Jljc2015\jljc2015.cshtml" />
     <Content Include="Views\AboutUs\Director_43.cshtml" />
+    <Content Include="Views\Jljc\jc2016.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\base\basic.css" />
