@@ -9,6 +9,10 @@ namespace DotWeb.WebApp.Controllers
     public class JljcController : WebFrontController
     {
         // GET: Event
+        public ActionResult Index()
+        {
+            return View("jc2016");
+        }
         public ActionResult jc2016()
         {
             return View();
