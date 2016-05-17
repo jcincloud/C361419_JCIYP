@@ -28,9 +28,7 @@ function isValidJSONDate(value, userFormat) {
                 y = date[i];
         }
         ;
-        return (m > 0 && m < 13 &&
-            y && y.length === 4 &&
-            d > 0 && d <= (new Date(y, m, 0)).getDate());
+        return (m > 0 && m < 13 && y && y.length === 4 && d > 0 && d <= (new Date(y, m, 0)).getDate());
     };
     return isDate(theDate, theFormat);
 }
@@ -139,13 +137,13 @@ function jqDelete(url, data) {
     });
 }
 function tosMessage(title, message, type) {
-    if (type == emToastrType.success)
+    if (type == 1 /* success */)
         toastr.success(message, title);
-    if (type == emToastrType.error)
+    if (type == 3 /* error */)
         toastr.error(message, title, { timeOut: 10000 });
-    if (type == emToastrType.warning)
+    if (type == 2 /* warning */)
         toastr.warning(message, title);
-    if (type == emToastrType.info)
+    if (type == 0 /* info */)
         toastr.info(message, title);
 }
 function formatFileSize(byte_size) {

@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+$states:                true;
+$img-path:              '../images/Event/jljc2016';
+
+// == color
+// ----------------------------------------------------------------------
+$brand-primary:         #784E90;             // 主色
+$brand-secondary:       #00A496;             // 輔色
+$brand-gray:            #E0DEDF;             // 主題灰
+$success:               #6CA844;             // 綠
+$info:                  #4983B3;             // 藍
+$warning:               #FAB74F;             // 黃
+$error:                 #CD4B6D;             // 紅
+
+
+// == basic
+// ----------------------------------------------------------------------
+$body-bg:               #F1F1F1;
+$body-color:            #221B13;
+$link-hover-color:      $info;
+$heading-color:         $success;
+
+
+// == layout
+// ----------------------------------------------------------------------
+$pages:                 false;
+
+$wrapper-bg:            #fff;
+$content-spacing:       0;
+
+// header
+$header-height:         716px;
+$header-bg:             url(#{$img-path}/header_bg.gif) no-repeat 0 0;
+
+// logo
+$logo-img:              'logo.gif';
+$logo-size:             287px 23px;
+$logo-pos:              false;
+
+
+// footer
+$footer-height:         217px;
+$footer-bg:             #F1F1F1;
+$footer-color:          #4C4C4C; //#63889D;
+
+
+// == module
+// ----------------------------------------------------------------------
+// ## module/nav
+// menu
+$menu-bg:               false;
+$menu-height:           50px;
+$menu-font-size:        18px;
+$menu-link:             #221714;
+$menu-link-hover:       #fff;
+
+$btn-bg:                false;
+$btn-border-radius:     false;
+
+
+// import
+// ------------------------------------------------------------
+@import "_client/settings"; // 覆蓋掉下面的變數
+
+@import "helper/function";
+@import "helper/var";
+@import "helper/mixins";
+
+@import "base/basic";
+@import "base/util";
+@import "base/form";
+
+@import "_client/layout";
+@import "_client/module/nav";
+@import "_client/module/classes";
+@import "_client/module/list";
+@import "_client/module/btn";
+@import "_client/module/tooltip";
+
+@import "vendor/magnific-popup/main";
+
+
+// == layout
+#wrapper {
+    @extend %center;
+    @include mq-max(break(wider,-1)) {
+        margin: 0;
+    }
+}
+
+// footer
+#footer ul, .contacts { float: left; }
+#footer {
+    ul {
+        text-align: left;
+        font-size: em(15);
+        margin-top: 30px;
+        margin-left: 20px;
+        width: 52%;
+    }
+    li {
+        padding: 0;
+        line-height: 30px;
+    }
+    .bg-warn {
+        background: #F59122;
+        padding: 3px 5px;
+        font-size: em(13,15);
+        margin-right: 3px;
+    }
+}
+
+.contacts {
+    text-align: left;
+    background: url(#{$img-path}/contacts_bg.png) 0 0 no-repeat;
+    width: 334px;
+    height: 200px;
+    padding: 22px 25px;
+    margin-top: -20px;
+
+    dt {
+        color: #2AABE1;
+        font-size: 1.125em;
+        font-weight: normal;
+        margin-bottom: 5px; }
+    dd {
+        font-size: 0.9375em;
+        line-height: 1.8;
+    }
+    a {
+        color: $footer-color;
+
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.qrcode {
+    background: #fff;
+    border: 1px solid $brand-gray;
+    padding: 8px;
+    float: right;
+    margin-top: 35px;
+}
+
+// == main
+// 置頂選單
+.top-nav {
+    @extend %center;
+    background: $warning;
+    padding-left: 5%;
+    padding-right: 3%;
+    z-index: z(header) + 2;
+
+    @include fixed(left 0 right 0 top 0);
+    @include mq-max(break(wider,-1)) {
+        margin: 0;
+    }
+}
+#menu {
+    float: right;
+
+    a {
+        padding: 0 20px;
+        &:hover, &:active { background: $success; }
+    }
+}
+.logo {
+    margin-top: ($menu-height - nth($logo-size,2))/2;
+}
+
+// == header
+#header {
+    h1 {
+        @include text-pic('logo.png',852px,294px);
+        @include absolute(left 50% top 84px);
+        margin-left: -375px;
+    }
+}
+.slogan {
+    @include text-pic('slogan.png',105px,267px);
+    @include absolute(left 5.6% top 0);
+}
+.time {
+    @include absolute(left 50% top 390px);
+    margin-left: -445px;
+
+    header {
+        @include text-pic('time.png',619px,106px);
+        float: left;
+    }
+    a {
+        display: inline-block;
+        background: url(#{$img-path}/btn-join.png) 0 0 no-repeat;
+        width: 237px;
+        height: 88px;
+        padding-top: $gutter;
+        text-align: center;
+        font-size: em(18);
+        color: #fff;
+        margin-left: 50px;
+        margin-top: 18px;
+
+        &:hover, &:active {
+            background-image: url(#{$img-path}/btn-join2.png?=v2);
+        }
+    }
+}
+.award {
+    @include absolute(left 50% top 520px);
+
+    color: #000;
+    font-size: em(20);
+    text-align: left;
+
+    background: url(#{$img-path}/icon-award.png) 0 0 no-repeat;
+    padding-left: 135px;
+    padding-top: 10px;
+    min-height: 141px;
+
+    margin-left: -239px;
+
+    .bg-warn {
+        display: inline-block;
+        padding: 5px 20px;
+        padding-right: 10px;
+        letter-spacing: 10px;
+        color: #000;
+        text-align: center;
+    }
+
+    li {
+        &:nth-child(2) {
+            font-size: em(37,20);
+            margin-top: -28px;
+        }
+        &:nth-child(3) {
+            margin-top: -8px;
+        }
+    }
+    strong {
+        font-size: em(65,37);
+        font-weight: normal;
+        margin: 0 10px;
+    }
+    a {
+        color: $success;
+        &:hover, &:active { color: $error; }
+    }
+}
+
+// 倒計時
+.clock {
+    @include absolute(right 2% top 10%);
+    background: #fff;
+    border: 3px solid $brand-secondary;
+    z-index: 556;
+
+    dt {
+        color: $brand-secondary;
+        font-size: em(22);
+        line-height: 1.3;
+        padding: 8px 20px;
+    }
+    dd {
+        padding-top: 5px;
+        background: $brand-secondary;
+        color: #D2D9BF;
+    }
+}
+
+// == 活動介紹
+.btn-white {
+    border: 1px solid rgba(#fff, .4);
+    color: rgba(#fff, .6);
+    padding: 22px 58px;
+
+    &:hover, &:active {
+        background: rgba(#fff,.9);
+        color: $brand-primary;
+    }
+}
+section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+
+    header {
+        font-size: em(45);
+        line-height: 1.85;
+        margin-bottom: 45px;
+        position: relative;
+
+        @include el(after) {
+            @include pos-center(x);
+            bottom: 0;
+            width: 63px;
+            height: 4px;
+            background: #DFDDDD;
+            opacity: .5;
+        }
+    }
+    h2 {
+        font-size: em(35);
+        opacity: .85;
+    }
+    p {
+        color: #F9C77E;
+        font-size: em(20);
+        margin-bottom: 45px;
+    }
+}
+
+#intro, .game, .forum, .news {
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+// 創業講堂
+#intro {
+    background-image: url(#{$img-path}/intro_bg.gif);
+
+    li {
+        @include circle(160px, false, $info);
+        margin: 0 2%;
+        position: relative;
+
+        &:hover {
+            img { opacity: .8 }
+        }
+    }
+    img {
+        vertical-align: top;
+        opacity: .4;
+        @include transition(opacity 1s);
+    }
+    span {
+        @include absolute(left 0 right 0 bottom 20px);
+    }
+}
+
+.game, .forum {
+    position: relative;
+    background-position: center center;
+
+    @include el(before) {
+        @include absolute(left 0 right 0 top -15px);
+        height: 45px;
+        background: url(#{$img-path}/line.png) center 0 no-repeat;
+    }
+}
+
+// 創業競賽
+.game {
+    background-image: url(#{$img-path}/game_bg.gif);
+}
+
+// 創業論壇
+.forum {
+    background-image: url(#{$img-path}/forum_bg.gif);
+
+    &::before { background-image: url(#{$img-path}/line2.png); }
+
+    p {
+        color: #F6CA45;
+    }
+}
+
+// 最新消息
+.news {
+    background-image: url(#{$img-path}/news_bg.gif);
+
+    dl {
+        margin-bottom: 10px;
+        &:nth-of-type(even) { border-left: 1px solid #E5E5E5; }
+    }
+
+    dd {
+        text-align: left;
+        line-height: 1.6;
+    }
+    dt {
+        color: #989898;
+        font-size: em(13);
+    }
+    .circle {
+        display: block;
+        background: $success;
+        width: 62px;
+        line-height: 62px;
+        color: #fff;
+        font-style: normal;
+        font-size: em(20,13);
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    h4 {
+        font-size: em(27);
+        line-height: 1.35;
+    }
+}
+
+// map
+.map {
+    padding: 0;
+    position: relative;
+
+    ul {
+        text-align: left;
+        color: #fff;
+        line-height: 1.65;
+        font-size: em(18);
+        background: rgba(#323232, .8);
+        padding: 20px;
+
+        @include absolute(left 50% top 50%);
+        @include transform(translate(50px, -55%));
+        @include icon-arrow(left, 8px, rgba(#323232, .8));
+
+        &::before {
+            @include absolute(left -16px top 42%);
+        }
+    }
+    span { margin-right: 10px; }
+}
+#map-canvas {
+    height: 380px;
+}
+
+// 創意競賽活動辦法
+.popup {
+  position: relative;
+  width: auto;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: #fff; }
+
+#rules {
+  width: 90%;
+  max-width: 1120px;
+  background: #fff url(#{$img-path}/gameBg.gif) 0 0 repeat-x;
+  color: #666; }
+  #rules h3, #rules p, #rules ol, #rules .list-inline {
+    margin-left: 140px; }
+  #rules .text-hide {
+    margin: auto; }
+  #rules ol ol {
+    margin-left: 0; }
+  #rules header {
+    background: url(#{$img-path}/title_main.gif) 0 0 no-repeat;
+    width: 118px;
+    height: 138px;
+    color: #909D0E;
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    padding-top: 75px; }
+  #rules h3 {
+    font-size: 1.25em;
+    border-left: 3px solid #909D0E;
+    padding-left: 6px; }
+    #rules h3:nth-of-type(2) {
+      border-left-color: #4DAFB2; }
+    #rules h3:nth-of-type(3) {
+      border-left-color: #3598D9; }
+    #rules h3:nth-of-type(4) {
+      border-left-color: #ADC833; }
+    #rules h3:nth-of-type(5) {
+      border-left-color: #F29B1A; }
+  #rules .list-inline li {
+    background-attachment: fixed;
+    background: url(#{$img-path}/download.gif) 0 0 no-repeat;
+    width: 380px;
+    height: 76px;
+    padding: 5px 8px 0 60px;
+    font-size: 0.9375em;
+    color: #323232; }
+    #rules .list-inline li:hover {
+      background-image: url(#{$img-path}/download2.gif); }
+    #rules .list-inline li:nth-child(2) {
+      background-position: -400px 0; }
+  #rules .list-inline a {
+    color: #323232; }
+  #rules a.tooltip {
+    display: block; }
+  #rules img:nth-of-type(1) {
+    margin-left: 30px; }
+
+.text-list {
+  line-height: 1.5; }
+  .text-list > li {
+    text-indent: -48px;
+    margin-left: 48px;
+    margin-bottom: 8px; }
+  .text-list ol li {
+    text-indent: 0;
+    margin-bottom: 5px; }
+
+.table-bordered {
+  text-indent: 0;
+  margin-top: 10px; }
+  .table-bordered caption, .table-bordered th {
+    text-align: center;
+    color: #656565;
+    font-size: 1.125em;
+    font-weight: normal; }
+  .table-bordered caption {
+    border: 1px solid #F29B1A;
+    border-bottom: none; }
+  .table-bordered th:nth-of-type(2) {
+    width: 80px; }
+
+.text-hide {
+  background: url("#{$img-path}/process.gif") no-repeat center 0;
+  width: 962px;
+  height: 377px;
+  font: 0/0 a;
+  text-indent: -9999px; }
+
+#paper {
+  text-align: center; }

@@ -8,51 +8,291 @@
 <head>
     <meta charset="UTF-8">
     <title>105年桃園市青年創業高峰會::三創Y世代 大學升了沒</title>
-    @* <link rel="stylesheet" href="~/Content/css/jljc2016.css"> *@
+    <link rel="stylesheet" href="~/Content/css/grid.css">
+    <link rel="stylesheet" href="~/Content/css/jljc2016.css">
     <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <style>
-    html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-    body{line-height:1}
-        html, body { text-align: center; }
-        body { background: #fff; padding: 0; }
-        #wrapper {
-            padding: 0;
-            position: relative;
-        }
-        .clock {
-          position: absolute;
-          background: #fff;
-          border: 3px solid #14A79D;
-          right: 10px;
-          top: 10px;
-          z-index: 556; }
-          .clock dt {
-            display: block;
-            color: #14A79D;
-            font-size: 1.4375em;
-            line-height: 1.3;
-            padding: 8px 20px; }
-          .clock dd {
-            padding-top: 5px;
-            background: #14A79D;
-            color: #D2D9BF; }
-    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
     <div id="wrapper">
-        <img src="~/Content/images/Event/jljc2016/jljc2016.jpg" alt="">
-        <dl class="clock"></dl>
-    </div>
+
+        <div class="top-nav">
+            <a class="logo scroll" href="#header">105年桃園市青年創業高峰會::三創Y世代 大學升了沒</a>
+            <nav id="menu">
+                <a href="#intro" class="scroll">活動介紹</a>
+                <a href="#rules" class="popup-link">競賽活動辦法</a>
+                <a href="http://www.careernet.org.tw/" target="_blank">創業資源</a>
+                <a href="http://www.accupass.com/go/cljc2016" target="_blank">我要報名</a>
+            </nav>
+        </div>
+
+        <header id="header">
+            <h1>105年桃園市青年創業高峰會::三創Y世代 大學升了沒</h1>
+            <h2 class="slogan">創新、創意、創業</h2>
+            <div class="time">
+                <header>105/6/18 9:00~17:00 中原大學中正樓</header>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&trp=true&sf=true&output=xml&dates=20160618T010000Z/20160618T090000Z&details=105年桃園市青年創業高峰會::三創Y世代 大學升了沒%0Ahttp://www.jciyp.org.tw/jljc&location=中原大學中正樓&text=參加 105年桃園市青年創業高峰會" target="_blank">加到我的google行事曆</a>
+            </div>
+            <ul class="list-unstyled award">
+                <li class="bg-warn">青年創業競賽</li>
+                <li>冠軍創業獎金<strong class="text-error">六萬</strong>元</li>
+                <li class="text-success">請情請上 <a href="http://www.jobtaole.com" target="_blank">www.jobtaole.com</a></li>
+            </ul>
+            <dl class="clock"></dl>
+        </header>
+
+        <section id="intro" class="bg-error">
+            <article class="wrap">
+                <header>創業講堂</header>
+                <h2 class="text-white">突破22K，翻轉小資人生</h2>
+                <p>邀請知名創業、企業家分享自身經驗以及面對茫茫工作藍海該有的心理準備<br>讓你突破小資族，翻轉人生</p>
+                <ul class="list-inline">
+                    <li class="tooltip" data-tooltip="第14屆十大傑出青年 《給年輕人的1句話》宏碁創辦人 施振榮：舊舞台沒變大，就去搭新的舞台!">
+                        <img class="img-circle" src="~/Content/images/Event/jljc2016/p1.png" alt="宏碁創辦人"><span>施振榮</span>
+                    </li>
+                    <li class="tooltip" data-tooltip="2010年當選MVP經理人獎、2012年當選 第35屆青年創業楷模、第8屆國際傑出發明家獎、第53屆十大傑出青年">
+                        <img class="img-circle" src="~/Content/images/Event/jljc2016/p2.png" alt="大江生醫總經理"><span>林詠翔</span>
+                    </li>
+                    <li class="tooltip" data-tooltip="人生不怕出生低，看小資女如何從20歲創業，闖出千萬人生，打造屬於自己的夢想藍圖!">
+                        <img class="img-circle" src="~/Content/images/Event/jljc2016/p3.png" alt="RELAX行動美容集團創辦人"><span>李治慧</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="bg-primary game">
+            <article class="wrap">
+                <header>創業競賽</header>
+                <h2 class="text-white">創意無上限、創業超展開</h2>
+                <p>五組創業團隊即席報告，創意大比拼，誰能獲得評審親睞？<br>抱走冠軍獎金六萬元</p>
+                <a href="#rules" class="btn btn-white popup-link">READ MORE</a>
+            </article>
+        </section>
+
+        <section class="bg-info forum">
+            <article class="wrap">
+                <header>創業論壇</header>
+                <h2 class="text-white">即時互動，馬上解答你心中所有問題</h2>
+                <p>與知名創業、企業家即時互動<br>大師們將畢生絕學現場傳授，有如醍醐灌頂，少練十年功</p>
+            </article>
+        </section>
+
+        <section class="news">
+            <article class="wrap">
+                <header class="text-success">LATEST NEWS</header>
+                <dl class="col-6">
+                    <dt class="col-3"><em class="circle">5.11</em>2016</dt>
+                    <dd class="col-8 offset-1">
+                        <h4 class="text-info">6/3 17:00前初賽電子檔截止收件</h4>
+                        快來報名參加！！
+                    </dd>
+                </dl>
+                <dl class="col-6">
+                    <dt class="col-3"><em class="circle">5.11</em>2016</dt>
+                    <dd class="col-8 offset-1">
+                        <h4 class="text-info">個人資料保護說明</h4>
+                        相關網站所取得的個人資料，皆僅供Accupass線上報名、中壢國際青年商會之活動內部使用，依活動報明相關文件說明之使用目的與範圍使用。除非事先說明或依照相關法律規定，否則本活動及Accupass活動通不會將您的個人資料提供給任何第三人、或移作其它目的使用。
+                    </dd>
+                </dl>
+            </article>
+        </section>
+
+        <section class="map">
+            <div id="map-canvas"></div>
+            <ul class="list-unstyled">
+                <li><span>時間</span>6/18(六) 9:00~17:00</li>
+                <li><span>地點</span>中原大學中正樓</li>
+            </ul>
+        </section>
+    </div><!-- wrapper //-->
+
+    <footer id="footer">
+        <div class="wrap">
+            <dl class="contacts">
+                <dt>中壢青商會</dt>
+                <dd>
+                    TEL: (03)492-0342　<a href="mailto:cljc@ms48.hinet.net">cljc@ms48.hinet.net</a><br>
+                    320 桃園縣中壢市明德路 280 之 3號 4樓
+                </dd>
+            </dl>
+            <ul class="list-unstyled">
+                <li>
+                    <span class="bg-warn">指導單位</span>
+                    桃園市政府、桃園市政府青年事務局
+                </li>
+                <li class="col-6">
+                    <span class="bg-warn">主辦單位</span>
+                    <img src="~/Content/images/Event/jljc2016/logo-jcin.gif">
+                    中壢國際青年商會
+                </li>
+                <li class="col-6">
+                    <span class="bg-warn">協辦單位</span>
+                    中原大學
+                </li>
+            </ul>
+            <a class="qrcode tooltip" href="http://www.accupass.com/go/cljc2016" target="_blank" data-tooltip="城市通報名網頁"><img src="~/Content/images/Event/jljc2016/QRCode.gif" alt="QRCode"></a>
+        </div>
+    </footer>
+
+    <div id="rules" class="mfp-hide popup">
+        <header>創業競賽</header>
+
+        <h3>競賽目的</h3>
+        <img class="float-r" src="~/Content/images/Event/jljc2016/pic.png" alt="插圖">
+        <p>當全球經濟局勢劇烈變動，如何在日新月異的社會中，找出青年創業之關鍵成功要素，積極提升國內青年素質，拓展創意、經濟與科技的全新視野，增加青年就業的自信與鴻圖，活絡創業之精神，為社會注如更強而有力的經濟脈絡。</p>
+        <p>桃園市是年輕的城市，市民平均年齡37歲，市府更應該負起責任，給年輕人舞台，給年輕人力量及支援，並給年輕家庭溫暖。</p>
+        <p>每個偉大的理想，都需要踏出第一步，年輕人擁有滿腔熱血，但不知如何運用政府資源，為自己增加創業機會。市府青年事務局下設的青年創業中心，將提供青年創業的協助，包括取得資金、開發產品、財務管理及產品行銷等。青創中心會分區設立，讓專業創業輔導師進駐，輔導年輕人創業。</p>
+
+        <h3>競賽流程</h3>
+        <p class="text-hide">組隊→8/7前繳交提案&報名→遴選6組決賽→團隊DEMO與展示會→頒獎與發送創業基金→後續創業培育資源→輔佐企業成立</p>
+
+        <img class="float-r" src="~/Content/images/Event/jljc2016/pic2.png" alt="插圖">
+        <h3>競賽資格說明</h3>
+        <p>參賽團隊不限任何技術、服務與產品類型，有無開立公司皆可，團隊至少兩位成員，歡迎亞太各國18~45歲學生、青年創業團體及青年創業家、臺灣地區全國大專院校青年與社團、中華民國國際青年商會會友，所有有志服務群眾、發揮己力之熱血青年共同組隊參加。</p>
+        <ol class="text-list">
+            <li>
+                （一）基本資格說明:
+                <ol>
+                    <li>參賽團員18~45歲，有無開立公司皆可報名參加。</li>
+                    <li>不含指導老師/業師，每團隊至多五人，二人即可組隊參加。</li>
+                    <li>指導老師/業師非必須，同一人可參加多組團隊，然成員與團隊名稱交件後不得更換，參賽團隊得設隊長一名，以便與活動執行單位連絡。</li>
+                </ol>
+            </li>
+            <li>（二）不限任何產業類別及技術類型，鼓勵跨院校、跨系組師生及社會人士組隊參加。</li>
+            <li>（三）主辦單位保有更動該組競賽時程、方式與得獎名額之權利。</li>
+            <li>（四）作品之著作權歸屬於參賽團隊所有，僅供主辦單位推廣展示之用，如有任何著作權或其他相關權利糾紛，應由團隊自行負責，並取消獲獎資格。</li>
+        </ol>
+
+        <h3>競賽繳交資料</h3>
+        <ol class="text-list">
+            <li>（一）資料繳交期間至 2015年8月7日，隨到隨審。</li>
+            <li>（二）2015年8月22日 進行團隊DEMO與展示 (2015桃園國際青年創業論壇)。</li>
+            <li>（三）書面審查初審，下載填寫下列文件，並於截止日前電子郵件寄至 <a href="mailto:cljc@ms48.hinet.net" target="_blank">cljc@ms48.hinet.net</a></li>
+        </ol>
+        <ul class="list-inline">
+            <li>
+                <a href="~/Content/download/doc.rar" class="tooltip" data-tooltip="按我下載報名文件">
+                    ※ 團隊報名表一式 (附件一) <br>
+                    ※ 創業構想書一式 (附件二，簡報檔格式)
+                </a>
+            </li>
+            <li>
+                <a href="mailto:cljc@ms48.hinet.net" target="_blank" class="tooltip" data-tooltip="請於截止日2015年8月7日(五) 前 E-mail">
+                    於截止日 2015年8月7日(五) 前 <br>
+                    E-mail 寄至 cljc@ms48.hinet.net
+                </a>
+            </li>
+        </ul>
+
+        <h3>評選與給獎方式</h3>
+        <ol class="text-list">
+            <li>( 一 ) 審查方式：評選委員會聘請業界相關學者及專家組成。</li>
+            <li>
+                ( 二 ) 評選標準：
+                <table class="table-bordered">
+                    <caption>評選標準</caption>
+                    <tr>
+                        <th>評審項目</th>
+                        <th>比重</th>
+                        <th>評審重點</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center">簡報技巧與團隊合作呈現應用潛能與商業價值</td>
+                        <td class="text-center">40%</td>
+                        <td>以團隊背景、計畫書內容、規畫、是否適切並充分表面其概念或產品之未來發展潛力，以及所具有的商業價值程度。</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">創業可行性</td>
+                        <td class="text-center">30%</td>
+                        <td>是否合理貼切且具市場競爭及未來發展潛力價值，有相當高程度的創業可行性。</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">計畫內容完整性</td>
+                        <td class="text-center">30%</td>
+                        <td>評比整體創業之原創性、創新性及獨特性</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                ( 三 ) 給獎內容
+                <ol>
+                    <li>凡投稿皆可獲得參賽證明書，獎金依綜合所得稅法規定除扣繳稅款。</li>
+                    <li>
+                        獎項內容 <br>
+                        首獎：創業基金 ３萬元 + 韓國交流研討會名額 x１名 <br>
+                        貳獎：創業基金 ２萬元 <br>
+                        參獎：創業基金 １萬元
+                    </li>
+                </ol>
+            </li>
+            <li>
+                ( 四 ) 後續創業培育資源
+                <ol>
+                    <li>獲選團隊可獲得由桃園市青年事務局提供之<u>育成空間</u>試營運。<br>育成空間：獲選團隊與桃園市青年事務局簽屬使用合約，擁有公共空間(如會議室借用)，與共同創業辦公室使用權(各團隊一張辦公桌)</li>
+                    <li>可免費使用育成空間相關資源，並代表桃園市青年事務局與中壢青商會參加相關交流活動。</li>
+                    <li>安排資金投資媒合對象，進一步討論投資可能性。</li>
+                </ol>
+            </li>
+        </ol>
+
+        <h3>【個人資料保護說明】</h3>
+        <p>2015桃園國際青年創業論壇-找回海盜精神就是要"創業"(以下簡稱本活動)透過Accupass活動通及相關網站所取得的個人資料，皆僅供Accupass線上報名、中壢國際青年商會之活動內部使用，依活動報明相關文件說明之使用目的與範圍使用。除非事先說明或依照相關法律規定，否則本活動及Accupass活動通不會將您的個人資料提供給任何第三人、或移作其它目的使用。</p>
+    </div><!-- popup //-->
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- 滾到特定區域 -->
     <script src="~/Content/js/scroll.js"></script>
 
-    <!-- 跑馬燈.燈箱.倒計時 -->
+    <!-- 燈箱 -->
+    <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- 倒計時 -->
     <script src="~/Content/js/jquery.countdown.min.js"></script>
     <script>
+        // 倒計時
         $('.clock').countdown('2016/6/18', function (event) {
             $(this).html(event.strftime('<dt><small>還 有</small><br>%D 天</dt> <dd>%H:%M:%S</dd>'));
         });
+
+        // 燈箱
+        $('.popup-link').magnificPopup({
+            type: 'inline',
+            removalDelay: 300,
+            mainClass: 'mfp-fade',
+            midClick: true
+        });
+
+        // google 地圖
+        var site = new google.maps.LatLng(24.956347, 121.243436);
+
+        function init() {
+
+            var mapOptions = {
+                // 地圖放大比例-數字愈大愈詳細
+                zoom: 18,
+                // 不要卷軸功能,ui也不要
+                scrollwheel: false,
+
+                // 地圖中心的緯、經度，必設
+                center: site,
+                // 顏色樣式
+                styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
+            };
+
+            // html tag
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: site,
+                map: map
+                // title: 'Taiwan(R.O.C.) Alder Optomechanical Corp.'
+            });
+            marker.setMap(map);
+        }
+
+        // 當網站loading完成後再建立此地圖
+        google.maps.event.addDomListener(window, 'load', init);
     </script>
 </body>
 </html>
