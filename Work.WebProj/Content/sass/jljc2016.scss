@@ -21,6 +21,9 @@ $body-color:            #221B13;
 $link-hover-color:      $info;
 $heading-color:         $success;
 
+$table-border:          1px solid lighten($warning,15);
+$td-font-size:          15px;
+
 
 // == layout
 // ----------------------------------------------------------------------
@@ -38,10 +41,9 @@ $logo-img:              'logo.gif';
 $logo-size:             287px 23px;
 $logo-pos:              false;
 
-
 // footer
 $footer-height:         217px;
-$footer-bg:             #F1F1F1;
+$footer-bg:             $body-bg;
 $footer-color:          #4C4C4C; //#63889D;
 
 
@@ -69,7 +71,7 @@ $btn-border-radius:     false;
 
 @import "base/basic";
 @import "base/util";
-@import "base/form";
+@import "base/table";
 
 @import "_client/layout";
 @import "_client/module/nav";
@@ -84,9 +86,7 @@ $btn-border-radius:     false;
 // == layout
 #wrapper {
     @extend %center;
-    @include mq-max(break(wider,-1)) {
-        margin: 0;
-    }
+    @include mq-max(break(wider,-1)) { margin: 0; }
 }
 
 // footer
@@ -119,6 +119,8 @@ $btn-border-radius:     false;
     padding: 22px 25px;
     margin-top: -20px;
 
+    @include mq(wider) { margin-left: 3%; }
+
     dt {
         color: #2AABE1;
         font-size: 1.125em;
@@ -141,6 +143,8 @@ $btn-border-radius:     false;
     padding: 8px;
     float: right;
     margin-top: 35px;
+
+    @include mq(wider) { margin-right: 3%; }
 }
 
 // == main
@@ -232,7 +236,7 @@ $btn-border-radius:     false;
     li {
         &:nth-child(2) {
             font-size: em(37,20);
-            margin-top: -28px;
+            margin-top: -20px;
         }
         &:nth-child(3) {
             margin-top: -8px;
@@ -270,6 +274,7 @@ $btn-border-radius:     false;
 }
 
 // == 活動介紹
+.center { margin: auto; }
 .btn-white {
     border: 1px solid rgba(#fff, .4);
     color: rgba(#fff, .6);
@@ -279,10 +284,20 @@ $btn-border-radius:     false;
         background: rgba(#fff,.9);
         color: $brand-primary;
     }
+    &:focus {
+        outline: none;
+    }
 }
 section {
+    @extend %clearfix;
     padding-top: 60px;
     padding-bottom: 80px;
+
+    article {
+        @include mq(wider) {
+            padding: 0 5%;
+        }
+    }
 
     header {
         font-size: em(45);
@@ -360,9 +375,7 @@ section {
 
     &::before { background-image: url(#{$img-path}/line2.png); }
 
-    p {
-        color: #F6CA45;
-    }
+    p { color: #F6CA45; }
 }
 
 // 最新消息
@@ -428,94 +441,115 @@ section {
 
 // 創意競賽活動辦法
 .popup {
-  position: relative;
-  width: auto;
-  margin: 20px auto;
-  padding: 20px 30px;
-  background: #fff; }
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    background: #fff;
+}
 
 #rules {
-  width: 90%;
-  max-width: 1120px;
-  background: #fff url(#{$img-path}/gameBg.gif) 0 0 repeat-x;
-  color: #666; }
-  #rules h3, #rules p, #rules ol, #rules .list-inline {
-    margin-left: 140px; }
-  #rules .text-hide {
-    margin: auto; }
-  #rules ol ol {
-    margin-left: 0; }
-  #rules header {
-    background: url(#{$img-path}/title_main.gif) 0 0 no-repeat;
-    width: 118px;
-    height: 138px;
-    color: #909D0E;
-    font-size: 1.5em;
-    font-weight: bold;
-    float: left;
-    text-align: center;
-    padding-top: 75px; }
-  #rules h3 {
-    font-size: 1.25em;
-    border-left: 3px solid #909D0E;
-    padding-left: 6px; }
-    #rules h3:nth-of-type(2) {
-      border-left-color: #4DAFB2; }
-    #rules h3:nth-of-type(3) {
-      border-left-color: #3598D9; }
-    #rules h3:nth-of-type(4) {
-      border-left-color: #ADC833; }
-    #rules h3:nth-of-type(5) {
-      border-left-color: #F29B1A; }
-  #rules .list-inline li {
-    background-attachment: fixed;
-    background: url(#{$img-path}/download.gif) 0 0 no-repeat;
-    width: 380px;
-    height: 76px;
-    padding: 5px 8px 0 60px;
-    font-size: 0.9375em;
-    color: #323232; }
-    #rules .list-inline li:hover {
-      background-image: url(#{$img-path}/download2.gif); }
-    #rules .list-inline li:nth-child(2) {
-      background-position: -400px 0; }
-  #rules .list-inline a {
-    color: #323232; }
-  #rules a.tooltip {
-    display: block; }
-  #rules img:nth-of-type(1) {
-    margin-left: 30px; }
+    width: 90%;
+    max-width: 1030px;
 
-.text-list {
-  line-height: 1.5; }
-  .text-list > li {
-    text-indent: -48px;
-    margin-left: 48px;
-    margin-bottom: 8px; }
-  .text-list ol li {
-    text-indent: 0;
-    margin-bottom: 5px; }
+    .content { padding: 20px 30px; }
+    header {
+        background: $warning;
+        padding: 15px 0;
+        font-size: em(29);
+        font-weight: bold;
+        text-align: center;
+    }
+    h3 {
+        @extend .clear;
 
-.table-bordered {
-  text-indent: 0;
-  margin-top: 10px; }
-  .table-bordered caption, .table-bordered th {
-    text-align: center;
-    color: #656565;
-    font-size: 1.125em;
-    font-weight: normal; }
-  .table-bordered caption {
-    border: 1px solid #F29B1A;
-    border-bottom: none; }
-  .table-bordered th:nth-of-type(2) {
-    width: 80px; }
+        font-size: em(25);
+        text-align: center;
+        margin-top: 35px;
+        padding-bottom: 12px;
+        position: relative;
 
-.text-hide {
-  background: url("#{$img-path}/process.gif") no-repeat center 0;
-  width: 962px;
-  height: 377px;
-  font: 0/0 a;
-  text-indent: -9999px; }
+        &:first-of-type { margin-top: 0; }
+
+        @include el(before) {
+            @include absolute(left 50% bottom 0);
+            @include transform(translateX(-50%));
+            width: 180px;
+            height: 1px;
+            background: lighten($warning,15);
+        }
+    }
+
+    nav {
+        @extend %clearfix;
+        margin-left: 40px;
+
+        a {
+            background-attachment: fixed;
+            background: url(../images/Event/download.gif) 0 0 no-repeat;
+            width: 380px;
+            height: 76px;
+            padding: 10px 8px 0 60px;
+            font-size: 0.9375em;
+            color: #323232;
+
+            &:hover, &:active { background-image: url(../images/Event/download2.gif); }
+            &:nth-child(2) { background-position: -400px 0; }
+        }
+    }
+    a.tooltip {
+        display: block;
+    }
+
+    .list-unstyled {
+        line-height: 1.65;
+        text-indent: -48px;
+        margin-left: 48px;
+
+        > li  {
+            color: darken($info,10);
+            margin-bottom: 10px;
+        }
+        ol {
+            margin-bottom: 10px;
+            text-indent: 0;
+            // margin-left: 0;
+            // margin-left: 47px;
+            font-size: em(15);
+            color: #000;
+        }
+    }
+
+    // .table-bordered {
+    th {
+        &:first-of-type { width: 230px; }
+        &:nth-of-type(2) { width: 80px; }
+    }
+
+    // 競賽流程
+    // .text-hide {
+    //     margin: auto;
+    //     @include text-pic('process.gif',1030px,412px);
+    // }
+    img { max-width: 100%; }
+
+    // 個人資料說明
+    footer {
+        text-align: left;
+        border-top: 1px solid $brand-gray;
+        padding: 30px;
+        background: lighten($brand-gray,10);
+
+        @include el(before, $content: '“') {
+            font-size: em(120);
+            font-family: Georgia, serif;
+            color: $brand-gray;
+            float: left;
+            margin-top: -20px;
+            margin-right: 20px;
+        }
+    }
+}
 
 #paper {
-  text-align: center; }
+    text-align: center;
+}
