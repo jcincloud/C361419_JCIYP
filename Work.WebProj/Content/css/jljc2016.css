@@ -1330,19 +1330,19 @@ section {
       background: #fcd599; }
   #rules nav {
     margin-left: 40px; }
-    #rules nav a {
+    #rules nav p {
       background-attachment: fixed;
-      background: url(../images/Event/download.gif) 0 0 no-repeat;
+      background: url(../images/Event/download-l.gif?v=2) 0 0 no-repeat;
       width: 380px;
-      height: 76px;
+      height: 120px;
       padding: 10px 8px 0 60px;
       font-size: 0.9375em;
       color: #323232; }
-      #rules nav a:hover, #rules nav a:active {
-        background-image: url(../images/Event/download2.gif); }
-      #rules nav a:nth-child(2) {
+      #rules nav p:nth-child(2) {
         background-position: -400px 0; }
-  #rules a.tooltip {
+    #rules nav a:hover, #rules nav a:active {
+      color: #fff; }
+  #rules .tooltip {
     display: block; }
   #rules .list-unstyled {
     line-height: 1.65;

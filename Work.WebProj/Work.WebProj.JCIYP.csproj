@@ -330,7 +330,8 @@
     <Content Include="Content\images\AboutUs\Previous\Thumbs.db" />
     <Content Include="Content\images\AboutUs\Senator\imgallery.xml" />
     <Content Include="Content\download\doc.rar" />
-    <Content Include="Content\download\apply-2016.rar" />
+    <Content Include="Content\download\2016-apply.doc" />
+    <Content Include="Content\download\2016-plan.ppt" />
     <None Include="Content\images\AboutUs\Senator\pic_0.jpg" />
     <None Include="Content\images\AboutUs\Senator\pic_1.jpg" />
     <None Include="Content\images\AboutUs\Senator\pic_2.jpg" />
@@ -353,6 +354,7 @@
     <Content Include="Content\images\Event\banner3.jpg" />
     <Content Include="Content\images\Event\banner4.jpg" />
     <Content Include="Content\images\Event\close.png" />
+    <Content Include="Content\images\Event\download-l.gif" />
     <Content Include="Content\images\Event\download.gif" />
     <Content Include="Content\images\Event\download2.gif" />
     <Content Include="Content\images\Event\jljc2015.jpg" />
@@ -408,6 +410,7 @@
     <Content Include="Content\images\Event\jljc2016\btn-join2.png" />
     <Content Include="Content\images\Event\jljc2016\contacts_bg.png" />
     <Content Include="Content\images\Event\jljc2016\forum_bg.gif" />
+    <Content Include="Content\images\Event\jljc2016\frame.jpg" />
     <Content Include="Content\images\Event\jljc2016\game_bg.gif" />
     <Content Include="Content\images\Event\jljc2016\header_bg.gif" />
     <Content Include="Content\images\Event\jljc2016\icon-award.png" />
