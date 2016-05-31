@@ -210,23 +210,27 @@ $btn-border-radius:     false;
         }
     }
 }
-.award {
+.award, .cheer {
     @include absolute(left 50% top 520px);
 
     color: #000;
     font-size: em(20);
     text-align: left;
 
+    [class*="bg"] {
+        padding: 5px 20px;
+        display: inline-block;
+    }
+}
+.award {
     background: url(#{$img-path}/icon-award.png) 0 0 no-repeat;
     padding-left: 135px;
     padding-top: 10px;
     min-height: 141px;
 
-    margin-left: -239px;
+    margin-left: -480px;
 
     .bg-warn {
-        display: inline-block;
-        padding: 5px 20px;
         padding-right: 10px;
         letter-spacing: 10px;
         color: #000;
@@ -251,6 +255,15 @@ $btn-border-radius:     false;
         color: $success;
         &:hover, &:active { color: $error; }
     }
+}
+.cheer {
+    background: url(#{$img-path}/cheer.jpg) 0 0 no-repeat;
+    padding-left: 150px;
+    margin-left: 80px;
+
+    li { margin: 2px 0; }
+    .text-error { font-size: em(23); }
+    .bg-error { letter-spacing: 2px; }
 }
 
 // 倒計時

@@ -406,8 +406,10 @@
     <Content Include="Content\images\Event\jljc2015\QRCode.png" />
     <Content Include="Content\images\Event\jljc2015\title.png" />
     <Content Include="Content\images\Event\jljc2015\title_main.gif" />
+    <Content Include="Content\images\Event\jljc2016\2016-banner.jpg" />
     <Content Include="Content\images\Event\jljc2016\btn-join.png" />
     <Content Include="Content\images\Event\jljc2016\btn-join2.png" />
+    <Content Include="Content\images\Event\jljc2016\cheer.jpg" />
     <Content Include="Content\images\Event\jljc2016\contacts_bg.png" />
     <Content Include="Content\images\Event\jljc2016\forum_bg.gif" />
     <Content Include="Content\images\Event\jljc2016\frame.jpg" />

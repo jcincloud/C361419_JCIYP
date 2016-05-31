@@ -524,7 +524,7 @@ img.float-l {
     background-color: #784E90;
     top: 45%;
     left: 0; }
-    .list-dot li::before, #header h1, .slogan, .time, .award, .clock, section header::after, #intro span, .game::before, .forum::before, .map ul, .map ul::before, #rules h3::before {
+    .list-dot li::before, #header h1, .slogan, .time, .award, .cheer, .clock, section header::after, #intro span, .game::before, .forum::before, .map ul, .map ul::before, #rules h3::before {
       position: absolute; }
 
 .btn {
@@ -1101,20 +1101,23 @@ img.mfp-img {
     .time a:hover, .time a:active {
       background-image: url(../images/Event/jljc2016/btn-join2.png?=v2); }
 
-.award {
+.award, .cheer {
   top: 520px;
   left: 50%;
   color: #000;
   font-size: 1.25em;
-  text-align: left;
+  text-align: left; }
+  .award [class*="bg"], .cheer [class*="bg"] {
+    padding: 5px 20px;
+    display: inline-block; }
+
+.award {
   background: url(../images/Event/jljc2016/icon-award.png) 0 0 no-repeat;
   padding-left: 135px;
   padding-top: 10px;
   min-height: 141px;
-  margin-left: -239px; }
+  margin-left: -480px; }
   .award .bg-warn {
-    display: inline-block;
-    padding: 5px 20px;
     padding-right: 10px;
     letter-spacing: 10px;
     color: #000;
@@ -1132,6 +1135,17 @@ img.mfp-img {
     color: #6CA844; }
     .award a:hover, .award a:active {
       color: #CD4B6D; }
+
+.cheer {
+  background: url(../images/Event/jljc2016/cheer.jpg) 0 0 no-repeat;
+  padding-left: 150px;
+  margin-left: 80px; }
+  .cheer li {
+    margin: 2px 0; }
+  .cheer .text-error {
+    font-size: 1.4375em; }
+  .cheer .bg-error {
+    letter-spacing: 2px; }
 
 .clock {
   top: 10%;
