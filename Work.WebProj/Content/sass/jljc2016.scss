@@ -396,7 +396,7 @@ section {
     background-image: url(#{$img-path}/news_bg.gif);
 
     dl {
-        margin-bottom: 10px;
+        margin-top: 30px;
         &:nth-of-type(even) { border-left: 1px solid #E5E5E5; }
     }
 
@@ -458,15 +458,13 @@ section {
     width: auto;
     margin: 0 auto;
     background: #fff;
-}
 
-#rules {
     width: 90%;
     max-width: 1030px;
 
     .content { padding: 20px 30px; }
+
     header {
-        background: $warning;
         padding: 15px 0;
         font-size: em(29);
         font-weight: bold;
@@ -491,6 +489,17 @@ section {
             background: lighten($warning,15);
         }
     }
+}
+
+#finalists {
+    text-align: center;
+
+    header { background: lighten($error,8); }
+    table { min-width: 660px; }
+}
+
+#rules {
+    header { background: $warning; }
 
     nav {
         @extend %clearfix;

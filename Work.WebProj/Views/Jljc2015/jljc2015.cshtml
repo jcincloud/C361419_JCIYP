@@ -38,7 +38,10 @@
                 <li><a class="btn" href="https://www.google.com/calendar/render?action=TEMPLATE&trp=true&sf=true&output=xml&dates=20150822T013000Z/20150822T100000Z&details=2015 桃園國際青年創業論壇:找回海盜精神，就是要創業%0Ahttp://www.jciyp.org.tw/&location=中央大學大講堂&text=參加 2015 桃園國際青年創業論壇" target="_blank">加到我的<br>google行事曆</a></li>
             </ul>
             <div id="banner"></div>
-            <dl class="clock"></dl>
+            <dl class="clock">
+                <dt>活動已<br>圓滿結束</dt>
+                <dd>謝謝大家支持</dd>
+            </dl>
             <a class="btn new image-link" href="~/Content/images/Event/jljc2015/10.jpg">決賽名單出爐了!!</a>
         </section>
 
@@ -284,7 +287,7 @@
     <!-- 跑馬燈.燈箱.倒計時 -->
     <script src="~/Content/js/jquery.marquee.min.js"></script>
     <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/Content/js/jquery.countdown.min.js"></script>
+    @* <script src="~/Content/js/jquery.countdown.min.js"></script> *@
     <script>
         $(document).ready(function () {
             // 跑馬燈
@@ -326,9 +329,9 @@
         // });
 
         // 倒計時設定
-        $('.clock').countdown('2015/8/22', function (event) {
-            $(this).html(event.strftime('<dt><small>還 有</small><br>%D 天</dt> <dd>%H:%M:%S</dd>'));
-        });
+        // $('.clock').countdown('2015/8/22', function (event) {
+        //     $(this).html(event.strftime('<dt><small>還 有</small><br>%D 天</dt> <dd>%H:%M:%S</dd>'));
+        // });
     </script>
 </body>
 </html>

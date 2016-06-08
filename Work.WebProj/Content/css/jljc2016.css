@@ -337,7 +337,7 @@ hr {
 .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, section::after, #rules nav::after {
   display: table;
   clear: both; }
-  .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, section::after, #rules nav::after, .list-dot li::before, section header::after, .game::before, .forum::before, .map ul::before, #rules h3::before {
+  .wrap::after, #header::after, #footer::after, #main::after, .clearfix::after, section::after, #rules nav::after, .list-dot li::before, section header::after, .game::before, .forum::before, .map ul::before, .popup h3::before {
     content: ''; }
 
 .circle, .list-dot li::before, #intro li {
@@ -460,7 +460,7 @@ html, body {
 img.float-l {
   margin-right: 15px; }
 
-.clear, #rules h3 {
+.clear, .popup h3 {
   clear: both; }
 
 .hidden {
@@ -524,7 +524,7 @@ img.float-l {
     background-color: #784E90;
     top: 45%;
     left: 0; }
-    .list-dot li::before, #header h1, .slogan, .time, .award, .cheer, .clock, section header::after, #intro span, .game::before, .forum::before, .map ul, .map ul::before, #rules h3::before {
+    .list-dot li::before, #header h1, .slogan, .time, .award, .cheer, .clock, section header::after, #intro span, .game::before, .forum::before, .map ul, .map ul::before, .popup h3::before {
       position: absolute; }
 
 .btn {
@@ -1254,7 +1254,7 @@ section {
 .news {
   background-image: url(../images/Event/jljc2016/news_bg.gif); }
   .news dl {
-    margin-bottom: 10px; }
+    margin-top: 30px; }
     .news dl:nth-of-type(even) {
       border-left: 1px solid #E5E5E5; }
   .news dd {
@@ -1311,28 +1311,25 @@ section {
   position: relative;
   width: auto;
   margin: 0 auto;
-  background: #fff; }
-
-#rules {
+  background: #fff;
   width: 90%;
   max-width: 1030px; }
-  #rules .content {
+  .popup .content {
     padding: 20px 30px; }
-  #rules header {
-    background: #FAB74F;
+  .popup header {
     padding: 15px 0;
     font-size: 1.8125em;
     font-weight: bold;
     text-align: center; }
-  #rules h3 {
+  .popup h3 {
     font-size: 1.5625em;
     text-align: center;
     margin-top: 35px;
     padding-bottom: 12px;
     position: relative; }
-    #rules h3:first-of-type {
+    .popup h3:first-of-type {
       margin-top: 0; }
-    #rules h3::before {
+    .popup h3::before {
       display: block;
       bottom: 0;
       left: 50%;
@@ -1342,54 +1339,64 @@ section {
       width: 180px;
       height: 1px;
       background: #fcd599; }
-  #rules nav {
-    margin-left: 40px; }
-    #rules nav p {
-      background-attachment: fixed;
-      background: url(../images/Event/download-l.gif?v=2) 0 0 no-repeat;
-      width: 380px;
-      height: 120px;
-      padding: 10px 8px 0 60px;
-      font-size: 0.9375em;
-      color: #323232; }
-      #rules nav p:nth-child(2) {
-        background-position: -400px 0; }
-    #rules nav a:hover, #rules nav a:active {
-      color: #fff; }
-  #rules .tooltip {
-    display: block; }
-  #rules .list-unstyled {
-    line-height: 1.65;
-    text-indent: -48px;
-    margin-left: 48px; }
-    #rules .list-unstyled > li {
-      color: #3a688f;
-      margin-bottom: 10px; }
-    #rules .list-unstyled ol {
-      margin-bottom: 10px;
-      text-indent: 0;
-      font-size: 0.9375em;
-      color: #000; }
-  #rules th:first-of-type {
-    width: 230px; }
-  #rules th:nth-of-type(2) {
-    width: 80px; }
-  #rules img {
-    max-width: 100%; }
-  #rules footer {
-    text-align: left;
-    border-top: 1px solid #E0DEDF;
-    padding: 30px;
-    background: #f9f8f9; }
-    #rules footer::before {
-      content: "“";
-      display: block;
-      font-size: 7.5em;
-      font-family: Georgia, serif;
-      color: #E0DEDF;
-      float: left;
-      margin-top: -20px;
-      margin-right: 20px; }
+
+#finalists {
+  text-align: center; }
+  #finalists header {
+    background: #d66b87; }
+  #finalists table {
+    min-width: 660px; }
+
+#rules header {
+  background: #FAB74F; }
+#rules nav {
+  margin-left: 40px; }
+  #rules nav p {
+    background-attachment: fixed;
+    background: url(../images/Event/download-l.gif?v=2) 0 0 no-repeat;
+    width: 380px;
+    height: 120px;
+    padding: 10px 8px 0 60px;
+    font-size: 0.9375em;
+    color: #323232; }
+    #rules nav p:nth-child(2) {
+      background-position: -400px 0; }
+  #rules nav a:hover, #rules nav a:active {
+    color: #fff; }
+#rules .tooltip {
+  display: block; }
+#rules .list-unstyled {
+  line-height: 1.65;
+  text-indent: -48px;
+  margin-left: 48px; }
+  #rules .list-unstyled > li {
+    color: #3a688f;
+    margin-bottom: 10px; }
+  #rules .list-unstyled ol {
+    margin-bottom: 10px;
+    text-indent: 0;
+    font-size: 0.9375em;
+    color: #000; }
+#rules th:first-of-type {
+  width: 230px; }
+#rules th:nth-of-type(2) {
+  width: 80px; }
+#rules img {
+  max-width: 100%; }
+#rules footer {
+  text-align: left;
+  border-top: 1px solid #E0DEDF;
+  padding: 30px;
+  background: #f9f8f9; }
+  #rules footer::before {
+    content: "“";
+    display: block;
+    font-size: 7.5em;
+    font-family: Georgia, serif;
+    color: #E0DEDF;
+    float: left;
+    margin-top: -20px;
+    margin-right: 20px; }
 
 #paper {
   text-align: center; }
