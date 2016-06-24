@@ -1,0 +1,578 @@
+@charset "UTF-8";
+
+$states:                true;
+$img-path:              '../images/Event/jljc2016';
+
+// == color
+// ----------------------------------------------------------------------
+$brand-primary:         #784E90;             // 主色
+$brand-secondary:       #00A496;             // 輔色
+$brand-gray:            #E0DEDF;             // 主題灰
+$success:               #6CA844;             // 綠
+$info:                  #4983B3;             // 藍
+$warning:               #FAB74F;             // 黃
+$error:                 #CD4B6D;             // 紅
+
+
+// == basic
+// ----------------------------------------------------------------------
+$body-bg:               #F1F1F1;
+$body-color:            #221B13;
+$link-hover-color:      $info;
+$heading-color:         $success;
+
+$table-border:          1px solid lighten($warning,15);
+$td-font-size:          15px;
+
+
+// == layout
+// ----------------------------------------------------------------------
+$pages:                 false;
+
+$wrapper-bg:            #fff;
+$content-spacing:       0;
+
+// header
+$header-height:         716px;
+$header-bg:             url(#{$img-path}/header_bg.gif) no-repeat 0 0;
+
+// logo
+$logo-img:              'logo.gif';
+$logo-size:             287px 23px;
+$logo-pos:              false;
+
+// footer
+$footer-height:         217px;
+$footer-bg:             $body-bg;
+$footer-color:          #4C4C4C; //#63889D;
+
+
+// == module
+// ----------------------------------------------------------------------
+// ## module/nav
+// menu
+$menu-bg:               false;
+$menu-height:           50px;
+$menu-font-size:        18px;
+$menu-link:             #221714;
+$menu-link-hover:       #fff;
+
+$btn-bg:                false;
+$btn-border-radius:     false;
+
+
+// import
+// ------------------------------------------------------------
+@import "_client/settings"; // 覆蓋掉下面的變數
+
+@import "helper/function";
+@import "helper/var";
+@import "helper/mixins";
+
+@import "base/basic";
+@import "base/util";
+@import "base/table";
+
+@import "_client/layout";
+@import "_client/module/nav";
+@import "_client/module/classes";
+@import "_client/module/list";
+@import "_client/module/btn";
+@import "_client/module/tooltip";
+
+@import "vendor/magnific-popup/main";
+
+
+// == layout
+#wrapper {
+    @extend %center;
+    @include mq-max(break(wider,-1)) { margin: 0; }
+}
+
+// footer
+#footer ul, .contacts { float: left; }
+#footer {
+    ul {
+        text-align: left;
+        font-size: em(15);
+        margin-top: 30px;
+        margin-left: 20px;
+        width: 52%;
+    }
+    li {
+        padding: 0;
+        line-height: 30px;
+    }
+    .bg-warn {
+        background: #F59122;
+        padding: 3px 5px;
+        font-size: em(13,15);
+        margin-right: 3px;
+    }
+}
+
+.contacts {
+    text-align: left;
+    background: url(#{$img-path}/contacts_bg.png) 0 0 no-repeat;
+    width: 334px;
+    height: 200px;
+    padding: 22px 25px;
+    margin-top: -20px;
+
+    @include mq(wider) { margin-left: 3%; }
+
+    dt {
+        color: #2AABE1;
+        font-size: 1.125em;
+        font-weight: normal;
+        margin-bottom: 5px; }
+    dd {
+        font-size: 0.9375em;
+        line-height: 1.8;
+    }
+    a {
+        color: $footer-color;
+
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.qrcode {
+    background: #fff;
+    border: 1px solid $brand-gray;
+    padding: 8px;
+    float: right;
+    margin-top: 35px;
+
+    @include mq(wider) { margin-right: 3%; }
+}
+
+// == main
+// 置頂選單
+.top-nav {
+    @extend %center;
+    background: $warning;
+    padding-left: 5%;
+    padding-right: 3%;
+    z-index: z(header) + 2;
+
+    @include fixed(left 0 right 0 top 0);
+    @include mq-max(break(wider,-1)) {
+        margin: 0;
+    }
+}
+#menu {
+    float: right;
+
+    a {
+        padding: 0 20px;
+        &:hover, &:active { background: $success; }
+    }
+}
+.logo {
+    margin-top: ($menu-height - nth($logo-size,2))/2;
+}
+
+// == header
+#header {
+    h1 {
+        @include text-pic('logo.png',852px,294px);
+        @include absolute(left 50% top 84px);
+        margin-left: -375px;
+    }
+}
+.slogan {
+    @include text-pic('slogan.png',105px,267px);
+    @include absolute(left 5.6% top 0);
+}
+.time {
+    @include absolute(left 50% top 390px);
+    margin-left: -445px;
+
+    header {
+        @include text-pic('time.png',619px,106px);
+        float: left;
+    }
+    a {
+        display: inline-block;
+        background: url(#{$img-path}/btn-join.png) 0 0 no-repeat;
+        width: 237px;
+        height: 88px;
+        padding-top: $gutter;
+        text-align: center;
+        font-size: em(18);
+        color: #fff;
+        margin-left: 50px;
+        margin-top: 18px;
+
+        &:hover, &:active {
+            background-image: url(#{$img-path}/btn-join2.png?=v2);
+        }
+    }
+}
+.award, .cheer {
+    @include absolute(left 50% top 520px);
+
+    color: #000;
+    font-size: em(20);
+    text-align: left;
+
+    [class*="bg"] {
+        padding: 5px 20px;
+        display: inline-block;
+    }
+}
+.award {
+    background: url(#{$img-path}/icon-award.png) 0 0 no-repeat;
+    padding-left: 135px;
+    padding-top: 10px;
+    min-height: 141px;
+
+    margin-left: -480px;
+
+    .bg-warn {
+        padding-right: 10px;
+        letter-spacing: 10px;
+        color: #000;
+        text-align: center;
+    }
+
+    li {
+        &:nth-child(2) {
+            font-size: em(37,20);
+            margin-top: -27px;
+        }
+        &:nth-child(3) {
+            margin-top: -7px;
+        }
+    }
+    strong {
+        font-size: em(65,37);
+        font-weight: normal;
+        margin: 0 10px;
+    }
+    a {
+        color: $success;
+        &:hover, &:active { color: $error; }
+    }
+}
+.cheer {
+    background: url(#{$img-path}/cheer.jpg) 0 0 no-repeat;
+    padding-left: 150px;
+    margin-left: 80px;
+
+    li { margin: 2px 0; }
+    .text-error { font-size: em(23); }
+    .bg-error { letter-spacing: 2px; }
+}
+
+// 倒計時
+.clock {
+    @include absolute(right 2% top 10%);
+    background: #fff;
+    border: 3px solid $brand-secondary;
+    z-index: 556;
+
+    dt {
+        color: $brand-secondary;
+        font-size: em(22);
+        line-height: 1.3;
+        padding: 8px 20px;
+    }
+    dd {
+        padding-top: 5px;
+        background: $brand-secondary;
+        color: #D2D9BF;
+    }
+}
+
+// == 活動介紹
+.center { margin: auto; }
+.btn-white {
+    border: 1px solid rgba(#fff, .4);
+    color: rgba(#fff, .6);
+    padding: 22px 58px;
+
+    &:hover, &:active {
+        background: rgba(#fff,.9);
+        color: $brand-primary;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+section {
+    @extend %clearfix;
+    padding-top: 60px;
+    padding-bottom: 80px;
+
+    article {
+        @include mq(wider) {
+            padding: 0 5%;
+        }
+    }
+
+    header {
+        font-size: em(45);
+        line-height: 1.85;
+        margin-bottom: 45px;
+        position: relative;
+
+        @include el(after) {
+            @include pos-center(x);
+            bottom: 0;
+            width: 63px;
+            height: 4px;
+            background: #DFDDDD;
+            opacity: .5;
+        }
+    }
+    h2 {
+        font-size: em(35);
+        opacity: .85;
+    }
+    p {
+        color: #F9C77E;
+        font-size: em(20);
+        margin-bottom: 45px;
+    }
+}
+
+#intro, .game, .forum, .news {
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+// 創業講堂
+#intro {
+    background-image: url(#{$img-path}/intro_bg.gif);
+
+    li {
+        @include circle(160px, false, $info);
+        margin: 0 2%;
+        position: relative;
+
+        &:hover {
+            img { opacity: .8 }
+        }
+    }
+    img {
+        vertical-align: top;
+        opacity: .4;
+        @include transition(opacity 1s);
+    }
+    span {
+        @include absolute(left 0 right 0 bottom 20px);
+    }
+}
+
+.game, .forum {
+    position: relative;
+    background-position: center center;
+
+    @include el(before) {
+        @include absolute(left 0 right 0 top -15px);
+        height: 45px;
+        background: url(#{$img-path}/line.png) center 0 no-repeat;
+    }
+}
+
+// 創業競賽
+.game {
+    background-image: url(#{$img-path}/game_bg.gif);
+}
+
+// 創業論壇
+.forum {
+    background-image: url(#{$img-path}/forum_bg.gif);
+
+    &::before { background-image: url(#{$img-path}/line2.png); }
+
+    p { color: #F6CA45; }
+}
+
+// 最新消息
+.news {
+    background-image: url(#{$img-path}/news_bg.gif);
+
+    dl {
+        margin-top: 30px;
+        &:nth-of-type(even) { border-left: 1px solid #E5E5E5; }
+    }
+
+    dd {
+        text-align: left;
+        line-height: 1.6;
+    }
+    dt {
+        color: #989898;
+        font-size: em(13);
+    }
+    .circle {
+        display: block;
+        background: $success;
+        width: 62px;
+        line-height: 62px;
+        color: #fff;
+        font-style: normal;
+        font-size: em(20,13);
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    h4 {
+        font-size: em(27);
+        line-height: 1.35;
+    }
+}
+
+// map
+.map {
+    padding: 0;
+    position: relative;
+
+    ul {
+        text-align: left;
+        color: #fff;
+        line-height: 1.65;
+        font-size: em(18);
+        background: rgba(#323232, .8);
+        padding: 20px;
+
+        @include absolute(left 50% top 50%);
+        @include transform(translate(50px, -55%));
+        @include icon-arrow(left, 8px, rgba(#323232, .8));
+
+        &::before {
+            @include absolute(left -16px top 42%);
+        }
+    }
+    span { margin-right: 10px; }
+}
+#map-canvas {
+    height: 380px;
+}
+
+// 創意競賽活動辦法
+.popup {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    background: #fff;
+
+    width: 90%;
+    max-width: 1030px;
+
+    .content { padding: 20px 30px; }
+
+    header {
+        padding: 15px 0;
+        font-size: em(29);
+        font-weight: bold;
+        text-align: center;
+    }
+    h3 {
+        @extend .clear;
+
+        font-size: em(25);
+        text-align: center;
+        margin-top: 35px;
+        padding-bottom: 12px;
+        position: relative;
+
+        &:first-of-type { margin-top: 0; }
+
+        @include el(before) {
+            @include absolute(left 50% bottom 0);
+            @include transform(translateX(-50%));
+            width: 180px;
+            height: 1px;
+            background: lighten($warning,15);
+        }
+    }
+}
+
+#finalists {
+    text-align: center;
+
+    header { background: lighten($error,8); }
+    table { min-width: 660px; }
+}
+
+#rules {
+    header { background: $warning; }
+
+    nav {
+        @extend %clearfix;
+        margin-left: 40px;
+
+        p {
+            background-attachment: fixed;
+            background: url(../images/Event/download-l.gif?v=2) 0 0 no-repeat;
+            width: 380px;
+            height: 120px;
+            padding: 10px 8px 0 60px;
+            font-size: 0.9375em;
+            color: #323232;
+
+            // &:hover { background-image: url(../images/Event/download2.gif); }
+            &:nth-child(2) { background-position: -400px 0; }
+        }
+        a {
+            &:hover, &:active { color: #fff; }
+        }
+    }
+    .tooltip { display: block; }
+
+    .list-unstyled {
+        line-height: 1.65;
+        text-indent: -48px;
+        margin-left: 48px;
+
+        > li  {
+            color: darken($info,10);
+            margin-bottom: 10px;
+        }
+        ol {
+            margin-bottom: 10px;
+            text-indent: 0;
+            // margin-left: 0;
+            // margin-left: 47px;
+            font-size: em(15);
+            color: #000;
+        }
+    }
+
+    // .table-bordered {
+    th {
+        &:first-of-type { width: 230px; }
+        &:nth-of-type(2) { width: 80px; }
+    }
+
+    // 競賽流程
+    // .text-hide {
+    //     margin: auto;
+    //     @include text-pic('process.gif',1030px,412px);
+    // }
+    img { max-width: 100%; }
+
+    // 個人資料說明
+    footer {
+        text-align: left;
+        border-top: 1px solid $brand-gray;
+        padding: 30px;
+        background: lighten($brand-gray,10);
+
+        @include el(before, $content: '“') {
+            font-size: em(120);
+            font-family: Georgia, serif;
+            color: $brand-gray;
+            float: left;
+            margin-top: -20px;
+            margin-right: 20px;
+        }
+    }
+}
+
+#paper {
+    text-align: center;
+}

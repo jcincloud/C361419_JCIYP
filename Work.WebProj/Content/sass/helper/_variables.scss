@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+
+$lte7:                    false !default;           // 是否兼容IE6-7
+$enable-flex:             false !default;           // 是否使用flex
+
+
+// == color
+// ----------------------------------------------------------------------
+// 語義色
+$gray-dark:               #373a3c !default;
+$gray:                    #55595c !default;
+$gray-light:              #818a91 !default;
+$gray-lighter:            #eceeef !default;
+$gray-lightest:           #f7f7f9 !default;
+
+// 抽象色
+$brand-primary:           #0066cc !default;             // 主色
+$brand-success:           #368B39 !default;             // 綠
+$brand-info:              #67C4DF !default;             // 藍
+$brand-warning:           rgb(255,128,0) !default;      // 黃
+$brand-danger:            #F35048 !default;             // 紅
+
+
+// == basic
+// ----------------------------------------------------------------------
+// <body> 背景 & 文字色
+$body-bg:                 #DBDCDC !default;
+$body-color:              #222 !default;
+
+$link-color:              $brand-primary !default;
+$link-decoration:         none !default;
+$link-hover-color:        lighten($link-color, 15%) !default;
+$link-hover-decoration:   none !default;
+
+
+// == Grid
+// ----------------------------------------------------------------------
+$grid-columns:            12 !default;
+$gutter:                  15px !default;
+$spacer:                  1rem !default;
+
+
+// == font
+// ----------------------------------------------------------------------
+$font-family-sans-serif:     'Microsoft Jhenghei', \5FAE\8EDF\6B63\9ED1\9AD4, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          Georgia, "Times New Roman", Times, 'Microsoft Jhenghei', \5FAE\8EDF\6B63\9ED1\9AD4, serif !default;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", 'Microsoft Jhenghei', \5FAE\8EDF\6B63\9ED1\9AD4, monospace !default;
+$font-family-base:           $font-family-sans-serif !default;
+$font-family-sp:             'Open Sans', "Helvetica Neue", Helvetica, Arial, "Heiti TC", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+
+$font-size-root:             16px !default;
+$font-size-base:             1rem !default;
+$font-size-lg:               1.25rem !default;
+$font-size-sm:               .875rem !default;
+$font-size-xs:               .75rem !default;
+
+$font-size-h1:               2.5rem !default;
+$font-size-h2:               2rem !default;
+$font-size-h3:               1.75rem !default;
+$font-size-h4:               1.5rem !default;
+$font-size-h5:               1.25rem !default;
+$font-size-h6:               1rem !default;
+
+$line-height:                1.5 !default;
+
+$headings-margin-bottom:     ($spacer / 2) !default;
+$headings-font-family:       inherit !default;
+$headings-font-weight:       500 !default;
+$headings-line-height:       1.1 !default;
+$headings-color:             inherit !default;
+
+$lead-font-size:             1.25rem !default;
+$lead-font-weight:           300 !default;
+
+$text-muted:                 $gray-light !default;
+
+$abbr-border-color:          $gray-light !default;
+
+$blockquote-small-color:     $gray-light !default;
+$blockquote-font-size:       ($font-size-base * 1.25) !default;
+$blockquote-border-color:    $gray-lighter !default;
+
+$hr-border-color:            rgba(0,0,0,.1) !default;
+$hr-border-width:            1px !default;
+
+$dt-font-weight:             bold !default;
+
+$nested-kbd-font-weight:     bold !default;
+
+$list-inline-padding:        5px !default;
+
+
+// == RWD
+// ----------------------------------------------------------------------
+$mq-breakpoints: (
+    mobile:             320px,
+    phone:              480px,
+    phone-plus:         640px,
+    tablet:             768px,
+    desktop:            980px,
+    wide:               1200px,
+    wider:              1400px
+) !default;

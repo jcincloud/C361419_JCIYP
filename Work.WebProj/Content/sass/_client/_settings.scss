@@ -1,0 +1,63 @@
+﻿@charset "UTF-8";
+
+// == layout
+// ----------------------------------------------------------------------
+$min-width:             1008px !default;     // 網頁最小尺寸
+$max-width:             1400px !default;     // 網頁最寬尺寸: .wrap
+$pages:                 'AboutUs' 'Products' 'ContactUs' !default;
+
+$wrapper-bg:            false !default;
+$content-spacing:       45px !default;
+
+// header
+$header-height:         103px !default;
+$header-bg:             url(#{$img-path}/bg.gif) repeat-x 0 103px !default;
+
+// logo
+$logo-img:              'logo.gif' !default;
+$logo-size:             335px 56px !default;
+$logo-pos:              left 0 top ($header-height - nth($logo-size,2))/2 !default;
+
+// menu
+$menu-bg:               false !default;
+$menu-height:           $header-height !default;
+$menu-font-size:        19px !default;
+$menu-link:             #191919 !default;
+$menu-link-hover:       $brand-secondary !default;
+
+$menu-mobile-has:          false !default;
+$menu-mobile-bk:           'wide' !default;     // 從()螢幕寬度以下開始出現行動版選單
+$menu-mobile-style:        'overlay' !default;  // 行動版選單樣式-push(推拉)/overlay(全螢幕)
+$menu-mobile-bg:           #eeefef !default;
+$menu-mobile-width:        100% !default;
+$menu-trigger-animate:     true !default;
+$menu-trigger-thickness:   3px !default;
+$menu-trigger-width:       42px !default;
+$menu-trigger-height:      $menu-trigger-thickness * 10 !default;
+$menu-trigger-pd:          0 !default;
+$menu-trigger-color:       $brand-primary !default;
+
+// footer
+$footer-height:         213px !default;
+$footer-bg:             $brand-primary !default; //#85afd9
+$footer-color:          #C3C1C6 !default; //#63889D;
+$footer-color2:         #2E333C !default; //#63889D;
+
+
+// == z-index
+// ----------------------------------------------------------------------
+$z-index: (
+    header:           4,
+    main:             2,
+    footer:           1,
+    banner:           3,
+    logo:             10,
+    menu:             20,
+    figure:           3,
+    dropdown:         21,
+    tooltip:          22,
+    modal:            23,
+    toggle:           25,
+    goTop:            99,
+    overlay:          999
+);
