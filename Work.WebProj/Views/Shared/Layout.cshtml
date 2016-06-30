@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="@Resources.ResWeb.keywords" />
     <meta name="description" content="@Resources.ResWeb.description" />
-    <meta property="og:title" content="@ViewBag.Title" />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewBag.Title | @ViewBag.Category" />
     <meta property="og:description" content="@Resources.ResWeb.description" />
-
-    <title>@Resources.ResWeb.WebTitle:@ViewBag.Category:@ViewBag.Title</title>
+    <meta property="og:site_name" content="@Resources.ResWeb.WebTitle" />
+    <title>@ViewBag.Category | @ViewBag.Title | @Resources.ResWeb.WebTitle</title>
     @if (ViewBag.IsFirstPage)
     {
         <link href="~/Content/css/index.css" rel="stylesheet" type="text/css"> }
