@@ -1,4 +1,4 @@
-@import "base/basic.css";
+﻿@import "base/basic.css";
 @import "base/layout.css";
 @import "flexslider.css" screen;
 @charset "utf-8";
@@ -148,7 +148,10 @@ aside {
 .contacts em { color: #5CC6A0; margin-right: 5px; }
 
 .calendar {margin-bottom:20px;}
+
+/* 影片、電子書 */
 #VideoIframe iframe {width:100% !important; height:200px !important; margin-bottom: 30px; }
+.ebook {margin-bottom: 30px;}
 
 /*      IE8 hack
 -----------------------------------------------------------------------*/
