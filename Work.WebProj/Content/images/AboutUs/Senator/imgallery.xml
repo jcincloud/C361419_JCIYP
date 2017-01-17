@@ -52,6 +52,16 @@
       <phototitle>page 10</phototitle>
    </photo>
 
+   <photo>
+      <filename>pic_11.jpg</filename>
+      <phototitle>page 11</phototitle>
+   </photo>
+
+   <photo>
+      <filename>pic_12.jpg</filename>
+      <phototitle>page 12</phototitle>
+   </photo>
+
  
     
 </gallery>
