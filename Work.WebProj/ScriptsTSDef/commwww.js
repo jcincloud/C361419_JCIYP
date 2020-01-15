@@ -1,5 +1,6 @@
 ;
 $(document).ready(function () {
+    //滑動 goTop
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('a.goTop').fadeIn();
@@ -14,6 +15,7 @@ $(document).ready(function () {
         }, 1000);
         return false;
     });
+    //手機版選單
     $('#menu-toggle').click(function () {
         $('.md-overlay').addClass("show");
         return false;
@@ -22,6 +24,7 @@ $(document).ready(function () {
         $('.md-overlay').removeClass("show");
         return false;
     });
+    //會員登錄驗登
     $("#loginMember").submit(function (event) {
         event.preventDefault();
         var act = $('#act').val();
@@ -30,7 +33,8 @@ $(document).ready(function () {
             "act": act,
             "pwd": pwd
         };
-        jqPost(gb_approot + 'Sys_Base/MNGLogin/ajax_MemberLogin', data).done(function (data, textStatus, jqXHRdata) {
+        jqPost(gb_approot + 'Sys_Base/MNGLogin/ajax_MemberLogin', data)
+            .done(function (data, textStatus, jqXHRdata) {
             if (!data.result) {
                 alert(data.message);
                 $('#pwd').val('');
@@ -38,10 +42,12 @@ $(document).ready(function () {
             else {
                 document.location.href = gb_approot + 'Sys_Active/MemberData';
             }
-        }).fail(function (jqXHR, textStatus, errorThrown) {
+        })
+            .fail(function (jqXHR, textStatus, errorThrown) {
             showAjaxError(errorThrown);
         });
     });
+    //加入青商
     $("#joinInfo").submit(function (event) {
         event.preventDefault();
         var m_name = $("#m_name").val();
@@ -58,7 +64,8 @@ $(document).ready(function () {
             "interest": m_interest,
             "memo": m_memo
         };
-        jqPost(gb_approot + 'Index/ajaxSendMail', data).done(function (data, textStatus, jqXHRdata) {
+        jqPost(gb_approot + 'Index/ajaxSendMail', data)
+            .done(function (data, textStatus, jqXHRdata) {
             if (!data.result) {
                 alert(data.message);
             }
@@ -71,8 +78,10 @@ $(document).ready(function () {
                 $("#m_interest").val('');
                 $("#m_memo").val('');
             }
-        }).fail(function (jqXHR, textStatus, errorThrown) {
+        })
+            .fail(function (jqXHR, textStatus, errorThrown) {
             showAjaxError(errorThrown);
         });
     });
 });
+//# sourceMappingURL=commwww.js.map

@@ -17,7 +17,7 @@ footer {
     margin: auto;
 }
 header {
-    background: url('../../images/bg.png') center 0 no-repeat;
+    background: url('../../images/bg.png') center 0 no-repeat, url('../images/bg.gif') 0 0 repeat-x;
     height: 136px;
     z-index:1;
 }
@@ -450,7 +450,7 @@ h1 {left:24.9%; margin-left:-168px;}
 .main-nav > ul > :nth-child(5) > a {background-position: -339px 0;}
 .main-nav > ul > :nth-child(6) > a {background-position: -432px 0;}
 .subnav {width:758px; left:-240px; margin-top:23px; padding-top:3px; padding-bottom:7px;}
-    
+
 }
 
 /*--  平板+phone --*/

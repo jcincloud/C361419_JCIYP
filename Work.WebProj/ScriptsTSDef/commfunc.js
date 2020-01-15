@@ -1,8 +1,18 @@
 function uniqid() {
+    /*
+        Autohr:Jerry
+        Date:2014/2/23
+        Description:取得唯一值
+    */
     var newDate = new Date();
     return newDate.getTime();
 }
 function obj_prop_list(obj) {
+    /*
+    Autohr:Jerry
+    Date:2014/2/23
+    Description:列出物件屬性
+    */
     for (var prop in obj) {
         if (obj.hasOwnProperty(prop)) {
             console.log(prop + " :" + obj[prop]);
@@ -28,7 +38,9 @@ function isValidJSONDate(value, userFormat) {
                 y = date[i];
         }
         ;
-        return (m > 0 && m < 13 && y && y.length === 4 && d > 0 && d <= (new Date(y, m, 0)).getDate());
+        return (m > 0 && m < 13 &&
+            y && y.length === 4 &&
+            d > 0 && d <= (new Date(y, m, 0)).getDate());
     };
     return isDate(theDate, theFormat);
 }
@@ -137,13 +149,13 @@ function jqDelete(url, data) {
     });
 }
 function tosMessage(title, message, type) {
-    if (type == 1 /* success */)
+    if (type == emToastrType.success)
         toastr.success(message, title);
-    if (type == 3 /* error */)
+    if (type == emToastrType.error)
         toastr.error(message, title, { timeOut: 10000 });
-    if (type == 2 /* warning */)
+    if (type == emToastrType.warning)
         toastr.warning(message, title);
-    if (type == 0 /* info */)
+    if (type == emToastrType.info)
         toastr.info(message, title);
 }
 function formatFileSize(byte_size) {
@@ -180,4 +192,5 @@ function getDateString() {
     x = y + mon + h + m + s + ms;
     return x;
 }
-var replace_br = /(?:\\[rn]|[\r\n]+)+/g;
+var replace_br = /(?:\\[rn]|[\r\n]+)+/g; //將換行碼換成<br/>的樣板
+//# sourceMappingURL=commfunc.js.map

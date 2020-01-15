@@ -6,7 +6,7 @@
 /*-- layout --*/
 #container { background: url('../images/Index/bg.gif') 0 0 repeat-x;}
 header {
-    background-image: url('../images/Index/bg2.gif');
+    background-image: url('../images/Index/bg2.gif'), url('../images/bg.gif');
     height: 120px;
 }
 #main {
@@ -40,7 +40,7 @@ aside {
     float: left;
     height: 23.875em;
 }
-.slides > li > span { 
+.slides > li > span {
     display:block;
     float:left;
 }
@@ -228,7 +228,7 @@ aside .grid + .grid {float:right;}
     background: url('../images/index/map.jpg') no-repeat left top;
 }
 .video {width: 310px !important; margin-bottom:30px;}
-    
+
 }
 
 /*--  平板+phone --*/

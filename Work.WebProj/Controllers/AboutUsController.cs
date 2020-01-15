@@ -14,6 +14,10 @@ namespace DotWeb.Controllers
         {
             return View();
         }
+        public ActionResult Director_47()
+        {
+            return View();
+        }
         public ActionResult Director_46()
         {
             return View();

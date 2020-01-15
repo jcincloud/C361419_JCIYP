@@ -53,6 +53,17 @@ aside a { font-size: .938em; display: block; margin: 10px 0; }
 }
 .search button:hover, .search button:active, .search button:focus {background: #00CED7;}
 
+/* 大頭照 */
+.shot {
+    display: block;
+    width: 100px;
+    height: 130px;
+    overflow: hidden;
+}
+.shot img {
+    max-width: 100px;
+}
+
 /* 多欄列表:青商理事會 */
 .grid {
     float: left;
@@ -88,8 +99,13 @@ aside a { font-size: .938em; display: block; margin: 10px 0; }
     height:190px;
     margin:0 -1px 0 0;
 }
-.pic-list2 a { display:block; }
-.pic-list2 img { display:block; width:100px; height:130px; margin-bottom:7px;}
+.pic-list2 a,
+.pic-list2 img { display:block; }
+.pic-list2 .shot {
+    /*display:block;
+    width:100px; height:130px; */
+    margin-bottom:7px;
+}
 
 /* 表格列表:最新消息.文件區 */
 .news-list td { background: transparent; padding: 8px 10px;}
@@ -262,11 +278,11 @@ background-color:#444;
 }
 figure.effect p::-webkit-scrollbar-thumb:active{
 background-color:#444;
-} 
+}
 figure.effect p::-webkit-scrollbar-track{
 background: #ccc;
 border-radius:2px;
-} 
+}
 
 figure.effect a {
     display: inline-block;
@@ -286,7 +302,7 @@ figure.effect a:hover {
 figure.effect a span {
     display: block;
     width:100%;
-    
+
     max-height: 1.2em;
     overflow: hidden;
     text-overflow:ellipsis;

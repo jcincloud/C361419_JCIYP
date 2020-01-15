@@ -8,7 +8,7 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
     };
     console.error = function (msg) {
     };
-    console.warn = function (msg) {
-    };
+    console.warn = function (msg) { };
 }
 ;
+//# sourceMappingURL=ConsoleIe8.js.map

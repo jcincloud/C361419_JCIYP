@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.Default.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.NuGet.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.NuGet.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -29,6 +30,7 @@
     <RestorePackages>true</RestorePackages>
     <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -354,6 +356,40 @@
     <Content Include="Content\images\AboutUs\45\09_dir4.jpg" />
     <Content Include="Content\images\AboutUs\45\09_dir5.jpg" />
     <Content Include="Content\images\AboutUs\45\09_dir6.jpg" />
+    <Content Include="Content\images\AboutUs\46\01_pre.jpg" />
+    <Content Include="Content\images\AboutUs\46\02_c_pre.jpg" />
+    <Content Include="Content\images\AboutUs\46\03_v_pre1.jpg" />
+    <Content Include="Content\images\AboutUs\46\03_v_pre2.jpg" />
+    <Content Include="Content\images\AboutUs\46\04_sec.jpg" />
+    <Content Include="Content\images\AboutUs\46\05_fin.jpg" />
+    <Content Include="Content\images\AboutUs\46\06_adv.jpg" />
+    <Content Include="Content\images\AboutUs\46\07_ever_sup.jpg" />
+    <Content Include="Content\images\AboutUs\46\08_sup1.jpg" />
+    <Content Include="Content\images\AboutUs\46\08_sup2.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir1.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir2.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir3.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir4.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir5.jpg" />
+    <Content Include="Content\images\AboutUs\46\09_dir6.jpg" />
+    <Content Include="Content\images\AboutUs\46\10_s.jpg" />
+    <Content Include="Content\images\AboutUs\47\01_pre.jpg" />
+    <Content Include="Content\images\AboutUs\47\02_c_pre.jpg" />
+    <Content Include="Content\images\AboutUs\47\03_v_pre1.jpg" />
+    <Content Include="Content\images\AboutUs\47\03_v_pre2.jpg" />
+    <Content Include="Content\images\AboutUs\47\04_sec.jpg" />
+    <Content Include="Content\images\AboutUs\47\05_fin.jpg" />
+    <Content Include="Content\images\AboutUs\47\06_adv.jpg" />
+    <Content Include="Content\images\AboutUs\47\07_ever_sup.jpg" />
+    <Content Include="Content\images\AboutUs\47\08_sup1.jpg" />
+    <Content Include="Content\images\AboutUs\47\08_sup2.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir1.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir2.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir3.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir4.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir5.jpg" />
+    <Content Include="Content\images\AboutUs\47\09_dir6.jpg" />
+    <Content Include="Content\images\AboutUs\47\10_s.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\33.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\34.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\35.jpg" />
@@ -379,6 +415,7 @@
     <Content Include="Content\images\AboutUs\Senator\pic_10.jpg" />
     <Content Include="Content\images\AboutUs\Senator\pic_11.jpg" />
     <Content Include="Content\images\AboutUs\Senator\pic_12.jpg" />
+    <Content Include="Content\images\AboutUs\Senator\pic_13.jpg" />
     <Content Include="Content\images\AboutUs\Senator\Senator.html" />
     <Content Include="Content\images\AboutUs\Senator\works.swf" />
     <Content Include="Content\images\Activities\no_pic.jpg" />
@@ -1541,6 +1578,8 @@
     <Content Include="Views\Jljc\jc2016.cshtml" />
     <Content Include="Views\AboutUs\Director_44.cshtml" />
     <Content Include="Views\AboutUs\Director_45.cshtml" />
+    <Content Include="Views\AboutUs\Director_46.cshtml" />
+    <Content Include="Views\AboutUs\Director_47.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\base\basic.css" />
@@ -1703,6 +1742,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.1.8.11\tools\Microsoft.TypeScript.targets')" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptSourceMap>False</TypeScriptSourceMap>
     <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
@@ -1711,7 +1751,6 @@
     <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
     <TypeScriptSourceMap>False</TypeScriptSourceMap>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
