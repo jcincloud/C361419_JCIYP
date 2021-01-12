@@ -390,6 +390,24 @@
     <Content Include="Content\images\AboutUs\47\09_dir5.jpg" />
     <Content Include="Content\images\AboutUs\47\09_dir6.jpg" />
     <Content Include="Content\images\AboutUs\47\10_s.jpg" />
+    <Content Include="Content\images\AboutUs\48\159.jpg" />
+    <Content Include="Content\images\AboutUs\48\2063.jpg" />
+    <Content Include="Content\images\AboutUs\48\2065.jpg" />
+    <Content Include="Content\images\AboutUs\48\2146.jpg" />
+    <Content Include="Content\images\AboutUs\48\2184.jpg" />
+    <Content Include="Content\images\AboutUs\48\2357.jpg" />
+    <Content Include="Content\images\AboutUs\48\2524.jpg" />
+    <Content Include="Content\images\AboutUs\48\2537.jpg" />
+    <Content Include="Content\images\AboutUs\48\2548.jpg" />
+    <Content Include="Content\images\AboutUs\48\2550.jpg" />
+    <Content Include="Content\images\AboutUs\48\2585.jpg" />
+    <Content Include="Content\images\AboutUs\48\2602.jpg" />
+    <Content Include="Content\images\AboutUs\48\2610.jpg" />
+    <Content Include="Content\images\AboutUs\48\2634.jpg" />
+    <Content Include="Content\images\AboutUs\48\2634.png" />
+    <Content Include="Content\images\AboutUs\48\2660.jpg" />
+    <Content Include="Content\images\AboutUs\48\2680.jpg" />
+    <Content Include="Content\images\AboutUs\48\536.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\33.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\34.jpg" />
     <Content Include="Content\images\AboutUs\OB_President\35.jpg" />
@@ -1580,6 +1598,7 @@
     <Content Include="Views\AboutUs\Director_45.cshtml" />
     <Content Include="Views\AboutUs\Director_46.cshtml" />
     <Content Include="Views\AboutUs\Director_47.cshtml" />
+    <Content Include="Views\AboutUs\Director_48.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\base\basic.css" />

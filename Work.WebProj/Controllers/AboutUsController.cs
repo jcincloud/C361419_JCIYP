@@ -6,6 +6,10 @@ namespace DotWeb.Controllers
 {
     public class AboutUsController : WebFrontController
     {
+        public ActionResult Index()
+        {
+            return View("AboutUs");
+        }
         public ActionResult TaiwanJC()
         {
             return View();
@@ -14,10 +18,17 @@ namespace DotWeb.Controllers
         {
             return View();
         }
+        [Route("AboutUs/Director")]
+        public ActionResult Director_48()
+        {
+            return View();
+        }
+        [Route("AboutUs/Director/47")]
         public ActionResult Director_47()
         {
             return View();
         }
+        [Route("AboutUs/Director/46")]
         public ActionResult Director_46()
         {
             return View();
