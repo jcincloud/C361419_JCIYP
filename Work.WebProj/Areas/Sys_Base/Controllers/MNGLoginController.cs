@@ -122,9 +122,9 @@ namespace DotWeb.Areas.Sys_Base.Controllers
             #endregion
 
             //語系使用
-            HttpCookie WebLang = Request.Cookies[CommWebSetup.WebCookiesId + ".Lang"];
-            WebLang.Value = model.lang;
-            Response.Cookies.Add(WebLang);
+            //HttpCookie WebLang = Request.Cookies[CommWebSetup.WebCookiesId + ".Lang"];
+            //WebLang.Value = model.lang;
+            //Response.Cookies.Add(WebLang);
 
             try
             {
@@ -136,7 +136,7 @@ namespace DotWeb.Areas.Sys_Base.Controllers
                 Response.Cookies.Add(new HttpCookie(CommWebSetup.Cookie_DepartmentName, item_department.department_name));
                 Response.Cookies.Add(new HttpCookie("user_login", Server.UrlEncode(EncryptString.desEncryptBase64("N"))));
                 var item_lang = db.i_Lang
-                    .Where(x => x.lang == WebLang.Value)
+                    .Where(x => x.lang == "zh-TW")
                     .Select(x => new { x.area })
                     .Single();
 
